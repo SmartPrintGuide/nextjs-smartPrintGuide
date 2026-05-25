@@ -31,7 +31,7 @@ export const fetchAllChats = () => async (dispatch, getState) => {
             },
         };
 
-        const { data } = await axios.get(`${process.env.NEXT_PUBLIC_}/chats`, config);
+        const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/chats`, config);
 
         dispatch({
             type: CHAT_LIST_SUCCESS,
@@ -62,7 +62,7 @@ export const fetchUserChat = () => async (dispatch, getState) => {
             },
         };
 
-        const { data } = await axios.get(`${process.env.NEXT_PUBLIC_}/chats/my`, config);
+        const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/chats/my`, config);
 
         dispatch({
             type: CHAT_DETAILS_SUCCESS,
@@ -93,7 +93,7 @@ export const fetchChatById = (id) => async (dispatch, getState) => {
             },
         };
 
-        const { data } = await axios.get(`${process.env.NEXT_PUBLIC_}/chats/${id}`, config);
+        const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/chats/${id}`, config);
 
         dispatch({
             type: CHAT_DETAILS_SUCCESS,
@@ -126,7 +126,7 @@ export const sendChatMessage = (chatId, message) => async (dispatch, getState) =
         };
 
         const { data } = await axios.post(
-            `${process.env.NEXT_PUBLIC_}/chats/${chatId}/messages`,
+            `${process.env.NEXT_PUBLIC_API_URL}/chats/${chatId}/messages`,
             { message },
             config
         );
@@ -166,7 +166,7 @@ export const markChatAsRead = (chatId) => async (dispatch, getState) => {
             },
         };
 
-        await axios.put(`${process.env.NEXT_PUBLIC_}/chats/${chatId}/read`, {}, config);
+        await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/chats/${chatId}/read`, {}, config);
 
         dispatch({
             type: CHAT_MARK_READ_SUCCESS,

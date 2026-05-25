@@ -22,6 +22,9 @@ export async function POST(request) {
 
     const otp = generateOTP();
     console.log('Generated OTP:', otp, 'for email:', trimmedEmail);
+
+    const salt = await bcrypt.genSalt(10);
+    const passwordHash = await bcrypt.hash(password, salt);
     
     try {
       await sendOTPEmail(trimmedEmail, otp, 'registration');
@@ -32,9 +35,6 @@ export async function POST(request) {
     }
 
     await OTP.findOneAndDelete({ email: trimmedEmail, type: 'registration' });
-
-    const salt = await bcrypt.genSalt(10);
-    const passwordHash = await bcrypt.hash(password, salt);
 
     const otpDoc = await OTP.create({
       email: trimmedEmail,

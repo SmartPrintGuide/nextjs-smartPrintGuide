@@ -5,8 +5,9 @@ import { authenticate } from '@/lib/auth';
 
 export async function GET(request, { params }) {
   try {
+    const { id } = await params;
     await connectDB();
-    const category = await Category.findById(params.id);
+    const category = await Category.findById(id);
     if (!category) return NextResponse.json({ message: 'Category not found' }, { status: 404 });
     return NextResponse.json(category);
   } catch (error) {
@@ -16,12 +17,13 @@ export async function GET(request, { params }) {
 
 export async function PUT(request, { params }) {
   try {
+    const { id } = await params;
     await connectDB();
     const user = await authenticate(request);
     if (!user || !user.isAdmin) return NextResponse.json({ message: 'Not authorized as admin' }, { status: 401 });
 
     const body = await request.json();
-    const category = await Category.findById(params.id);
+    const category = await Category.findById(id);
     if (!category) return NextResponse.json({ message: 'Category not found' }, { status: 404 });
 
     category.name = body.name || category.name;
@@ -38,11 +40,12 @@ export async function PUT(request, { params }) {
 
 export async function DELETE(request, { params }) {
   try {
+    const { id } = await params;
     await connectDB();
     const user = await authenticate(request);
     if (!user || !user.isAdmin) return NextResponse.json({ message: 'Not authorized as admin' }, { status: 401 });
 
-    const category = await Category.findById(params.id);
+    const category = await Category.findById(id);
     if (!category) return NextResponse.json({ message: 'Category not found' }, { status: 404 });
 
     await category.deleteOne();

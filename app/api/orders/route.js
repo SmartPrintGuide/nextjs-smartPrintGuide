@@ -7,6 +7,9 @@ import { getUserFromRequest } from '@/lib/auth';
 
 export async function GET(request) {
   const user = await getUserFromRequest(request);
+  if (!user) {
+    return NextResponse.json({ message: 'Not authorized' }, { status: 401 });
+  }
   await dbConnect();
 
   if (user.isAdmin) {
@@ -43,8 +46,22 @@ export async function GET(request) {
 
 export async function POST(request) {
   const user = await getUserFromRequest(request);
+  if (!user) {
+    return NextResponse.json({ message: 'Not authorized' }, { status: 401 });
+  }
+
   const body = await request.json();
-  const { cartItems, shippingAddress, paymentMethod, itemsPrice, shippingPrice, totalPrice } = body;
+  const {
+    cartItems: rawCartItems,
+    orderItems: rawOrderItems,
+    shippingAddress,
+    paymentMethod,
+    itemsPrice,
+    shippingPrice,
+    totalPrice,
+  } = body;
+
+  const cartItems = rawCartItems || rawOrderItems || [];
 
   if (!cartItems || cartItems.length === 0) {
     return NextResponse.json({ message: 'No order items' }, { status: 400 });

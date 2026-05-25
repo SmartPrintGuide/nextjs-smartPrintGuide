@@ -4,9 +4,10 @@ import Order from '@/lib/models/Order';
 import { getUserFromRequest } from '@/lib/auth';
 
 export async function GET(request, { params }) {
+  const { id } = await params;
   const user = await getUserFromRequest(request);
   await dbConnect();
-  const order = await Order.findById(params.id).populate('user', 'name email');
+  const order = await Order.findById(id).populate('user', 'name email');
   if (!order) {
     return NextResponse.json({ message: 'Order not found' }, { status: 404 });
   }
@@ -17,9 +18,10 @@ export async function GET(request, { params }) {
 }
 
 export async function PUT(request, { params }) {
+  const { id } = await params;
   const user = await getUserFromRequest(request);
   await dbConnect();
-  const order = await Order.findById(params.id);
+  const order = await Order.findById(id);
   if (!order) {
     return NextResponse.json({ message: 'Order not found' }, { status: 404 });
   }

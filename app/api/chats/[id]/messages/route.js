@@ -4,6 +4,7 @@ import Chat from '@/lib/models/Chat';
 import { authenticate } from '@/lib/auth';
 
 export async function POST(request, { params }) {
+  const { id } = await params;
   const user = await authenticate(request);
   if (!user) {
     return NextResponse.json({ message: 'Not authorized' }, { status: 401 });
@@ -16,7 +17,7 @@ export async function POST(request, { params }) {
   }
 
   await dbConnect();
-  const chat = await Chat.findById(params.id);
+  const chat = await Chat.findById(id);
   if (!chat) {
     return NextResponse.json({ message: 'Chat not found' }, { status: 404 });
   }

@@ -13,7 +13,7 @@ export const fetchCartFromBackend = () => async (dispatch, getState) => {
     const { userLogin: { userInfo } } = getState();
     if (!userInfo) return;
     try {
-        const { data } = await axios.get(`${process.env.NEXT_PUBLIC_}/cart`, {
+        const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/cart`, {
             headers: { Authorization: `Bearer ${userInfo.token}` },
         });
         data.forEach(item => {
@@ -33,11 +33,11 @@ const syncCartToBackend = async (cartItems, userInfo) => {
     if (!userInfo) return;
     try {
         // Replace all items in backend cart
-        await axios.delete(`${process.env.NEXT_PUBLIC_}/cart`, {
+        await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/cart`, {
             headers: { Authorization: `Bearer ${userInfo.token}` },
         });
         for (const item of cartItems) {
-            await axios.post(`${process.env.NEXT_PUBLIC_}/cart`, {
+            await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/cart`, {
                 product: item.product,
                 qty: item.qty,
             }, {
@@ -52,7 +52,7 @@ const syncCartToBackend = async (cartItems, userInfo) => {
 
 export const addToCart = (idOrSlug, qty) => async (dispatch, getState) => {
     const { userLogin: { userInfo } } = getState();
-    const { data } = await axios.get(`${process.env.NEXT_PUBLIC_}/products/${idOrSlug}`);
+    const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/products/${idOrSlug}`);
 
     const item = {
         product: data._id,
@@ -113,7 +113,7 @@ export const clearCart = () => async (dispatch, getState) => {
     dispatch({ type: CART_CLEAR_ITEMS });
     if (userInfo) {
         try {
-            await axios.delete(`${process.env.NEXT_PUBLIC_}/cart`, {
+            await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/cart`, {
                 headers: { Authorization: `Bearer ${userInfo.token}` },
             });
         } catch (e) {}

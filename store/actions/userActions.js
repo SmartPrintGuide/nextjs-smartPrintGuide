@@ -42,7 +42,7 @@ export const login = (email, password, isAdminLogin = false) => async (dispatch)
         };
 
         const { data } = await axios.post(
-            `${process.env.NEXT_PUBLIC_}/auth/login`,
+            `${process.env.NEXT_PUBLIC_API_URL}/auth/login`,
             { email, password, isAdminLogin },
             config
         );
@@ -86,7 +86,7 @@ export const register = (firstName, lastName, email, password) => async (dispatc
         };
 
         const { data } = await axios.post(
-            `${process.env.NEXT_PUBLIC_}/auth/register`,
+            `${process.env.NEXT_PUBLIC_API_URL}/auth/register`,
             { firstName, lastName, email, password },
             config
         );
@@ -124,7 +124,7 @@ export const sendRegistrationOTP = (firstName, lastName, email, password) => asy
         };
 
         const { data } = await axios.post(
-            `${process.env.NEXT_PUBLIC_}/auth/send-registration-otp`,
+            `${process.env.NEXT_PUBLIC_API_URL}/auth/send-registration-otp`,
             { firstName, lastName, email, password },
             config
         );
@@ -155,7 +155,7 @@ export const verifyRegistrationOTP = (email, otp) => async (dispatch) => {
         };
 
         const { data } = await axios.post(
-            `${process.env.NEXT_PUBLIC_}/auth/verify-registration-otp`,
+            `${process.env.NEXT_PUBLIC_API_URL}/auth/verify-registration-otp`,
             { email, otp },
             config
         );
@@ -186,7 +186,7 @@ export const forgotPassword = (email) => async (dispatch) => {
         };
 
         const { data } = await axios.post(
-            `${process.env.NEXT_PUBLIC_}/auth/forgot-password`,
+            `${process.env.NEXT_PUBLIC_API_URL}/auth/forgot-password`,
             { email },
             config
         );
@@ -217,7 +217,7 @@ export const resetPassword = (email, otp, newPassword) => async (dispatch) => {
         };
 
         const { data } = await axios.post(
-            `${process.env.NEXT_PUBLIC_}/auth/reset-password`,
+            `${process.env.NEXT_PUBLIC_API_URL}/auth/reset-password`,
             { email, otp, newPassword },
             config
         );
@@ -250,7 +250,7 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
             },
         };
 
-        const { data } = await axios.get(`${process.env.NEXT_PUBLIC_}/auth/profile`, config);
+        const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/auth/profile`, config);
 
         dispatch({
             type: USER_DETAILS_SUCCESS,
@@ -282,7 +282,7 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
             },
         };
 
-        const { data } = await axios.put(`${process.env.NEXT_PUBLIC_}/auth/profile`, user, config);
+        const { data } = await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/auth/profile`, user, config);
 
         dispatch({
             type: USER_UPDATE_PROFILE_SUCCESS,

@@ -103,7 +103,7 @@ const ProductGrid = ({
                           (product.images && product.images.length > 0
                             ? product.images[0].startsWith("http")
                               ? product.images[0]
-                              : `${process.env.NEXT_PUBLIC_?.replace("/api", "") || ""}${product.images[0]}`
+                              : `${process.env.NEXT_PUBLIC_API_URL?.replace("/api", "") || ""}${product.images[0]}`
                             : "/printer.png")
                         )}
                         alt={product.title}

@@ -51,7 +51,7 @@ const AdminCustomers = () => {
             setError(null);
             
             // Get Users with pagination
-            const { data: userData } = await axios.get(`${process.env.NEXT_PUBLIC_}/auth/users?search=${keyword}&page=${pageNumber}&limit=20`, {
+            const { data: userData } = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/auth/users?search=${keyword}&page=${pageNumber}&limit=20`, {
                 headers: { Authorization: `Bearer ${userInfo.token}` }
             });
 
@@ -62,7 +62,7 @@ const AdminCustomers = () => {
 
             // Fetch ALL orders to calculate customer stats accurately (with high limit)
             // Or fetch limited orders and accept inaccuracies. Using high limit for now.
-            const { data: orderData } = await axios.get(`${process.env.NEXT_PUBLIC_}/orders?limit=5000`, {
+            const { data: orderData } = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/orders?limit=5000`, {
                 headers: { Authorization: `Bearer ${userInfo.token}` }
             });
             const orders = orderData.orders || orderData; // Handle paginated or non-paginated return
@@ -117,7 +117,7 @@ const AdminCustomers = () => {
         if (!userInfo) return;
 
         try {
-            await axios.delete(`${process.env.NEXT_PUBLIC_}/auth/users/${confirmModal.userId}`, {
+            await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/auth/users/${confirmModal.userId}`, {
                 headers: { Authorization: `Bearer ${userInfo.token}` }
             });
             setConfirmModal({ show: false, type: '', userId: null, userName: '' });
@@ -135,7 +135,7 @@ const AdminCustomers = () => {
         }
 
         try {
-            const response = await axios.put(`${process.env.NEXT_PUBLIC_}/auth/users/${confirmModal.userId}/block`, {}, {
+            const response = await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/auth/users/${confirmModal.userId}/block`, {}, {
                 headers: { Authorization: `Bearer ${userInfo.token}` }
             });
             setConfirmModal({ show: false, type: '', userId: null, userName: '' });
@@ -155,7 +155,7 @@ const AdminCustomers = () => {
     const handleUnblockUser = async (userId) => {
         if (!userInfo) return;
         try {
-            await axios.put(`${process.env.NEXT_PUBLIC_}/auth/users/${userId}/unblock`, {}, {
+            await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/auth/users/${userId}/unblock`, {}, {
                 headers: { Authorization: `Bearer ${userInfo.token}` }
             });
             fetchCustomers(searchTerm, 1, false); // Refresh list
@@ -169,7 +169,7 @@ const AdminCustomers = () => {
         if (!userInfo) return;
 
         try {
-            await axios.put(`${process.env.NEXT_PUBLIC_}/auth/users/${confirmModal.userId}/unblock`, {}, {
+            await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/auth/users/${confirmModal.userId}/unblock`, {}, {
                 headers: { Authorization: `Bearer ${userInfo.token}` }
             });
             setConfirmModal({ show: false, type: '', userId: null, userName: '' });

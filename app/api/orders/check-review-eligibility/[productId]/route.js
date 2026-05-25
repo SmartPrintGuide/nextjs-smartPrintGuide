@@ -4,6 +4,7 @@ import Order from '@/lib/models/Order';
 import { authenticate } from '@/lib/auth';
 
 export async function GET(request, { params }) {
+  const { productId } = await params;
   const user = await authenticate(request);
   if (!user) {
     return NextResponse.json({ message: 'Not authorized' }, { status: 401 });
@@ -16,7 +17,7 @@ export async function GET(request, { params }) {
 
   const order = await Order.findOne({
     user: user._id,
-    'orderItems.product': params.productId,
+    'orderItems.product': productId,
     isDelivered: true,
   });
 

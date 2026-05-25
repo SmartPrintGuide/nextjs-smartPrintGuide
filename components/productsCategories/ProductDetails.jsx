@@ -42,7 +42,7 @@ const ProductDetails = ({ productSlug: propSlug }) => {
                     const config = {
                         headers: { Authorization: `Bearer ${userInfo.token}` },
                     };
-                    const baseUrl = process.env.NEXT_PUBLIC_ || "/api";
+                    const baseUrl = process.env.NEXT_PUBLIC_API_URL || "/api";
                     const { data } = await axios.get(
                         `${baseUrl}/orders/check-review-eligibility/${product._id}`,
                         config
@@ -109,7 +109,7 @@ const ProductDetails = ({ productSlug: propSlug }) => {
             ? product.images.map((img) =>
                 img.startsWith("http")
                     ? img
-                    : `${process.env.NEXT_PUBLIC_?.replace("/api", "")}${img}`
+                    : `${process.env.NEXT_PUBLIC_API_URL?.replace("/api", "")}${img}`
             )
             : ["/printer.png"];
 
@@ -271,7 +271,7 @@ const ProductDetails = ({ productSlug: propSlug }) => {
                         <h2 className="text-3xl font-bold text-blue-800 mb-10">Related Products</h2>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                             {relatedProducts.filter((p) => p?._id !== product._id).slice(0, 4).map((item) => {
-                                const firstImage = item?.images?.length > 0 ? (item.images[0].startsWith("http") ? item.images[0] : `${process.env.NEXT_PUBLIC_?.replace("/api", "")}${item.images[0]}`) : "/printer.png";
+                                const firstImage = item?.images?.length > 0 ? (item.images[0].startsWith("http") ? item.images[0] : `${process.env.NEXT_PUBLIC_API_URL?.replace("/api", "")}${item.images[0]}`) : "/printer.png";
                                 return (
                                     <Link key={item._id} href={`/product/${item.slug || item._id}`} className="bg-white/80 backdrop-blur-xl rounded-3xl border border-blue-100 p-6 shadow-xl hover:-translate-y-2 transition group">
                                         <img src={firstImage} alt={item.title} className="h-32 object-contain w-full mb-4 rounded-xl group-hover:scale-105 transition" />

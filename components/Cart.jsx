@@ -73,7 +73,7 @@ const Cart = () => {
                                             <div className="col-span-1 md:col-span-2 flex gap-6 items-center">
                                                 <div className="w-20 h-20 bg-white border border-blue-100 rounded-2xl p-2 flex-shrink-0">
                                                     <img
-                                                        src={item.image ? (item.image.startsWith('http') ? item.image : `${process.env.NEXT_PUBLIC_}${item.image}`) : printerImg}
+                                                        src={item.image ? (item.image.startsWith('http') ? item.image : `${process.env.NEXT_PUBLIC_API_URL}${item.image}`) : printerImg}
                                                         alt={item.title}
                                                         className="w-full h-full object-contain"
                                                     />

@@ -244,6 +244,10 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
             userLogin: { userInfo },
         } = getState();
 
+        if (!userInfo || !userInfo.token) {
+            throw new Error('Not authorized. Please log in.');
+        }
+
         const config = {
             headers: {
                 Authorization: `Bearer ${userInfo.token}`,
@@ -274,6 +278,10 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
         const {
             userLogin: { userInfo },
         } = getState();
+
+        if (!userInfo || !userInfo.token) {
+            throw new Error('Not authorized. Please log in.');
+        }
 
         const config = {
             headers: {

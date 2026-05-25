@@ -26,7 +26,7 @@ export const createOrder = (order) => async (dispatch, getState) => {
             },
         };
 
-        const { data } = await axios.post(`${process.env.NEXT_PUBLIC_}/orders`, order, config);
+        const { data } = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/orders`, order, config);
 
         dispatch({
             type: ORDER_CREATE_SUCCESS,
@@ -57,7 +57,7 @@ export const getOrderDetails = (id) => async (dispatch, getState) => {
             },
         };
 
-        const { data } = await axios.get(`${process.env.NEXT_PUBLIC_}/orders/${id}`, config);
+        const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/orders/${id}`, config);
 
         dispatch({
             type: ORDER_DETAILS_SUCCESS,
@@ -88,7 +88,8 @@ export const listMyOrders = () => async (dispatch, getState) => {
             },
         };
 
-        const { data } = await axios.get(`${process.env.NEXT_PUBLIC_}/orders/myorders`, config);
+        const baseUrl = process.env.NEXT_PUBLIC_API_URL || '/api';
+        const { data } = await axios.get(`${baseUrl}/orders`, config);
 
         dispatch({
             type: ORDER_LIST_MY_SUCCESS,

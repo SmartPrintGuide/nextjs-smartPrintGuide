@@ -4,9 +4,10 @@ import Order from '@/lib/models/Order';
 import { getUserFromRequest } from '@/lib/auth';
 
 export async function PUT(request, { params }) {
+  const { id } = await params;
   const user = await getUserFromRequest(request);
   await dbConnect();
-  const order = await Order.findById(params.id);
+  const order = await Order.findById(id);
   if (!order) {
     return NextResponse.json({ message: 'Order not found' }, { status: 404 });
   }

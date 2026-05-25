@@ -31,24 +31,30 @@ const ProfilePage = () => {
     const userUpdateProfile = useSelector((state) => state.userUpdateProfile);
     const { success, loading: updateLoading } = userUpdateProfile;
 
+    const profileUser = user || userInfo;
+
     const orderListMy = useSelector((state) => state.orderListMy);
     const { loading: loadingOrders, error: errorOrders, orders } = orderListMy;
 
     useEffect(() => {
-        if (!userInfo) {
+        if (!userInfo || !userInfo.token) {
             router.push('/');
-        } else if (userInfo.isAdmin) {
+            return;
+        }
+
+        if (userInfo.isAdmin) {
             router.push('/admin/dashboard');
+            return;
+        }
+
+        if (!user || !user.firstName || success) {
+            dispatch({ type: USER_UPDATE_PROFILE_RESET });
+            dispatch(getUserDetails('profile'));
+            dispatch(listMyOrders());
         } else {
-            if (!user || !user.firstName || success) {
-                dispatch({ type: USER_UPDATE_PROFILE_RESET });
-                dispatch(getUserDetails('profile'));
-                dispatch(listMyOrders());
-            } else {
-                setFirstName(user.firstName);
-                setLastName(user.lastName);
-                setEmail(user.email);
-            }
+            setFirstName(user.firstName);
+            setLastName(user.lastName);
+            setEmail(user.email);
         }
     }, [dispatch, router, userInfo, user, success]);
 
@@ -58,7 +64,7 @@ const ProfilePage = () => {
         if (password !== confirmPassword) {
             setMessage('Passwords do not match');
         } else {
-            dispatch(updateUserProfile({ id: user._id, firstName, lastName, email, password }));
+            dispatch(updateUserProfile({ id: profileUser?._id, firstName, lastName, email, password }));
         }
     };
 
@@ -73,12 +79,12 @@ const ProfilePage = () => {
                     <aside className="w-full md:w-72 flex-shrink-0 mb-8 md:mb-0">
                         <div className="bg-white/90 rounded-3xl shadow-2xl border border-blue-100 p-8 flex flex-col items-center text-center">
                             <div className="w-24 h-24 bg-gradient-to-br from-blue-400 via-blue-600 to-indigo-600 rounded-full flex items-center justify-center mb-4 text-white shadow-2xl border-4 border-blue-200">
-                                <span className="text-3xl font-extrabold uppercase drop-shadow-lg">{user.firstName?.charAt(0) || user.name?.charAt(0)}</span>
+                                <span className="text-3xl font-extrabold uppercase drop-shadow-lg">{profileUser?.firstName?.charAt(0) || profileUser?.name?.charAt(0) || '?'}</span>
                             </div>
-                            <h2 className="text-xl font-extrabold text-blue-800 drop-shadow-lg mb-1">{user.name}</h2>
-                            <p className="text-blue-500 text-xs truncate max-w-full font-medium mb-2">{user.email}</p>
+                            <h2 className="text-xl font-extrabold text-blue-800 drop-shadow-lg mb-1">{profileUser?.name || 'Loading...'}</h2>
+                            <p className="text-blue-500 text-xs truncate max-w-full font-medium mb-2">{profileUser?.email || 'Loading...'}</p>
                             <div className="inline-flex items-center px-4 py-1 bg-gradient-to-r from-blue-100 to-blue-200 text-blue-700 text-xs font-bold rounded-full shadow-md mb-4">
-                                {user.isAdmin ? 'Administrator' : 'Customer'}
+                                {profileUser?.isAdmin ? 'Administrator' : 'Customer'}
                             </div>
                             <div className="w-full flex flex-col gap-2 mt-4">
                                 <button

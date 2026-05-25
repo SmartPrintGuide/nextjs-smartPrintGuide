@@ -82,13 +82,18 @@ export const listMyOrders = () => async (dispatch, getState) => {
             userLogin: { userInfo },
         } = getState();
 
+        if (!userInfo || !userInfo.token) {
+            throw new Error('Not authorized. Please log in.');
+        }
+
         const config = {
             headers: {
                 Authorization: `Bearer ${userInfo.token}`,
             },
         };
 
-        const { data } = await axios.get(`/api/orders/myorders`, config);
+        const baseUrl = process.env.NEXT_PUBLIC_API_URL || '/api';
+        const { data } = await axios.get(`${baseUrl}/orders`, config);
 
         dispatch({
             type: ORDER_LIST_MY_SUCCESS,

@@ -47,7 +47,7 @@ const Checkout = () => {
 
                 // Check if containers exist and are empty
                 if (numberEl && !numberEl.hasChildNodes()) {
-                     const cloverInstance = new window.Clover(process.env.NEXT_PUBLIC_);
+                     const cloverInstance = new window.Clover(process.env.NEXT_PUBLIC_CLOVER_PUBLIC_KEY);
                      const elements = cloverInstance.elements();
                      
                      const styles = { 
@@ -109,7 +109,7 @@ const Checkout = () => {
             try {
                 setLoading(true);
                 const { data } = await axios.post(
-                    `${process.env.NEXT_PUBLIC_}/shipping/rates`,
+                    `${process.env.NEXT_PUBLIC_API_URL}/shipping/rates`,
                     { address, city, postalCode, country, state: province, phone, cartItems },
                     { headers: { Authorization: `Bearer ${userInfo.token}` } }
                 );
@@ -199,14 +199,14 @@ const Checkout = () => {
             };
 
             const { data: createdOrder } = await axios.post(
-                `${process.env.NEXT_PUBLIC_}/orders`,
+                `${process.env.NEXT_PUBLIC_API_URL}/orders`,
                 orderData,
                 { headers: { Authorization: `Bearer ${userInfo.token}` } }
             );
 
             // 2. Clover payment (backend)
             await axios.post(
-                `${process.env.NEXT_PUBLIC_}/orders/clover/pay`,
+                `${process.env.NEXT_PUBLIC_API_URL}/orders/clover/pay`,
                 {
                     amount: totalPrice,
                     orderId: createdOrder._id,

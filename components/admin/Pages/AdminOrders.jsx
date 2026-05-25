@@ -40,7 +40,7 @@ const AdminOrders = () => {
     const fetchOrders = async (keyword = '', pageNumber = 1, append = false) => {
         try {
             setLoading(true);
-            const { data } = await axios.get(`${process.env.NEXT_PUBLIC_}/orders?search=${keyword}&page=${pageNumber}&limit=20`, {
+            const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/orders?search=${keyword}&page=${pageNumber}&limit=20`, {
                 headers: { Authorization: `Bearer ${userInfo.token}` }
             });
             
@@ -121,7 +121,7 @@ const AdminOrders = () => {
     const handleUpdateSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`${process.env.NEXT_PUBLIC_}/orders/${selectedOrder._id}/status`, updateForm, {
+            await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/orders/${selectedOrder._id}/status`, updateForm, {
                 headers: { Authorization: `Bearer ${userInfo.token}` }
             });
             fetchOrders();

@@ -86,7 +86,7 @@ const Header = () => {
     debounceRef.current = setTimeout(async () => {
       setLoadingSuggestions(true);
       try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_}/products?search=${encodeURIComponent(searchTerm.trim())}&limit=5`);
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/products?search=${encodeURIComponent(searchTerm.trim())}&limit=5`);
         const data = await res.json();
         setSuggestions(Array.isArray(data.products) ? data.products : []);
       } catch {
@@ -247,7 +247,7 @@ const Header = () => {
                 aria-label="Shopping cart"
               >
                 <ShoppingCart size={24} />
-                {userInfo && cartCount > 0 && (
+                {isMounted && userInfo && cartCount > 0 && (
                   <span className="absolute -top-2 -right-2 bg-blue-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center shadow-md">
                     {cartCount}
                   </span>

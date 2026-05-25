@@ -57,7 +57,7 @@ export const listProducts = (
         if (wireless) params.wireless = wireless;
         if (mainFunction && mainFunction.length > 0) params.mainFunction = mainFunction.join(',');
 
-        const { data } = await axios.get(`${process.env.NEXT_PUBLIC_}/products`, {
+        const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/products`, {
             params
         });
 
@@ -81,7 +81,7 @@ export const listProductDetails = (id) => async (dispatch) => {
     try {
         dispatch({ type: PRODUCT_DETAILS_REQUEST });
 
-        const { data } = await axios.get(`${process.env.NEXT_PUBLIC_}/products/${id}`);
+        const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/products/${id}`);
 
         dispatch({
             type: PRODUCT_DETAILS_SUCCESS,
@@ -110,7 +110,7 @@ export const deleteProduct = (id) => async (dispatch, getState) => {
             },
         };
 
-        await axios.delete(`${process.env.NEXT_PUBLIC_}/products/${id}`, config);
+        await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/products/${id}`, config);
 
         dispatch({ type: PRODUCT_DELETE_SUCCESS });
     } catch (error) {
@@ -137,7 +137,7 @@ export const createProduct = (productData) => async (dispatch, getState) => {
             },
         };
 
-        const { data } = await axios.post(`${process.env.NEXT_PUBLIC_}/products`, productData, config);
+        const { data } = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/products`, productData, config);
 
         dispatch({
             type: PRODUCT_CREATE_SUCCESS,
@@ -167,7 +167,7 @@ export const updateProduct = (id, productData) => async (dispatch, getState) => 
         };
 
         const { data } = await axios.put(
-            `${process.env.NEXT_PUBLIC_}/products/${id}`,
+            `${process.env.NEXT_PUBLIC_API_URL}/products/${id}`,
             productData,
             config
         );
@@ -203,7 +203,7 @@ export const createProductReview = (productId, review) => async (dispatch, getSt
             },
         };
 
-        await axios.post(`${process.env.NEXT_PUBLIC_}/products/${productId}/reviews`, review, config);
+        await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/products/${productId}/reviews`, review, config);
 
         dispatch({
             type: PRODUCT_CREATE_REVIEW_SUCCESS,
@@ -234,7 +234,7 @@ export const updateProductReview = (productId, review) => async (dispatch, getSt
             },
         };
 
-        await axios.put(`${process.env.NEXT_PUBLIC_}/products/${productId}/reviews`, review, config);
+        await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/products/${productId}/reviews`, review, config);
 
         dispatch({
             type: PRODUCT_UPDATE_REVIEW_SUCCESS,
@@ -264,7 +264,7 @@ export const deleteProductReview = (productId) => async (dispatch, getState) => 
             },
         };
 
-        await axios.delete(`${process.env.NEXT_PUBLIC_}/products/${productId}/reviews`, config);
+        await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/products/${productId}/reviews`, config);
 
         dispatch({
             type: PRODUCT_DELETE_REVIEW_SUCCESS,

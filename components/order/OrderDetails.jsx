@@ -30,7 +30,7 @@ const OrderDetails = ({ id: propId }) => {
         const fetchOrder = async () => {
             try {
                 setLoading(true);
-                const { data } = await axios.get(`${process.env.NEXT_PUBLIC_}/orders/${id}`, {
+                const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/orders/${id}`, {
                     headers: { Authorization: `Bearer ${userInfo.token}` }
                 });
                 setOrder(data);

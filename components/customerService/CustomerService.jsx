@@ -30,7 +30,7 @@ const CustomerService = () => {
     setSuccess(false);
 
     try {
-      await axios.post(`${process.env.NEXT_PUBLIC_}/contact`, {
+      await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/contact`, {
         name,
         email,
         orderNumber,

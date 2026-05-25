@@ -30,10 +30,10 @@ const Footer = () => {
           </p>
 
           <div className="flex space-x-4 mt-4">
-            <a href={process.env.NEXT_PUBLIC_} target="_blank" rel="noopener noreferrer" className="bg-white/20 p-2 rounded-full hover:bg-white hover:text-blue-700 transition duration-300 shadow-md"><FaFacebookF /></a>
-            <a href={process.env.NEXT_PUBLIC_} target="_blank" rel="noopener noreferrer" className="bg-white/20 p-2 rounded-full hover:bg-white hover:text-blue-700 transition duration-300 shadow-md"><FaTwitter /></a>
-            <a href={process.env.NEXT_PUBLIC_} target="_blank" rel="noopener noreferrer" className="bg-white/20 p-2 rounded-full hover:bg-white hover:text-blue-700 transition duration-300 shadow-md"><FaInstagram /></a>
-            <a href={process.env.NEXT_PUBLIC_} target="_blank" rel="noopener noreferrer" className="bg-white/20 p-2 rounded-full hover:bg-white hover:text-blue-700 transition duration-300 shadow-md"><FaLinkedinIn /></a>
+            <a href={process.env.NEXT_PUBLIC_API_URL} target="_blank" rel="noopener noreferrer" className="bg-white/20 p-2 rounded-full hover:bg-white hover:text-blue-700 transition duration-300 shadow-md"><FaFacebookF /></a>
+            <a href={process.env.NEXT_PUBLIC_API_URL} target="_blank" rel="noopener noreferrer" className="bg-white/20 p-2 rounded-full hover:bg-white hover:text-blue-700 transition duration-300 shadow-md"><FaTwitter /></a>
+            <a href={process.env.NEXT_PUBLIC_API_URL} target="_blank" rel="noopener noreferrer" className="bg-white/20 p-2 rounded-full hover:bg-white hover:text-blue-700 transition duration-300 shadow-md"><FaInstagram /></a>
+            <a href={process.env.NEXT_PUBLIC_API_URL} target="_blank" rel="noopener noreferrer" className="bg-white/20 p-2 rounded-full hover:bg-white hover:text-blue-700 transition duration-300 shadow-md"><FaLinkedinIn /></a>
           </div>
         </div> */}
 

@@ -47,11 +47,11 @@ const CategoryProductList = ({ categoryName, heading, enableFlowLayout = false }
     image: product.image
       ? product.image.startsWith("http")
         ? product.image
-        : `${process.env.NEXT_PUBLIC_?.replace("/api", "") || ""}${product.image}`
+        : `${process.env.NEXT_PUBLIC_API_URL?.replace("/api", "") || ""}${product.image}`
       : product.images && Array.isArray(product.images) && product.images.length > 0
       ? product.images[0].startsWith("http")
         ? product.images[0]
-        : `${process.env.NEXT_PUBLIC_?.replace("/api", "") || ""}${product.images[0]}`
+        : `${process.env.NEXT_PUBLIC_API_URL?.replace("/api", "") || ""}${product.images[0]}`
       : "/assets/printer.png",
     link: `/product/${product.slug || product._id}`,
   }));

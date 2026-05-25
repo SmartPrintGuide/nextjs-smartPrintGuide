@@ -21,7 +21,7 @@ const TrackOrder = () => {
             setError(null);
             // We'll try to fetch without token first if they are on a public page
             // If it fails with 401, we know it's protected
-            const { data } = await axios.get(`${process.env.NEXT_PUBLIC_}/orders/${cleanId}`);
+            const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/orders/${cleanId}`);
             
             // Format order data for tracking display
             const formattedOrder = {

@@ -28,26 +28,36 @@ const AdminDashboard = () => {
         }
     }, [dispatch, userInfo]);
 
-    const statsDisplay = analytics ? [
+    const safeAnalytics = {
+        revenue: { total: 0, growth: 0 },
+        orders: { total: 0, growth: 0 },
+        activeStock: 0,
+        customers: { total: 0, growth: 0 },
+        recentOrders: [],
+        ordersByStatus: [],
+        ...(analytics || {}),
+    };
+
+    const statsDisplay = !loading ? [
         {
             label: 'Total Revenue',
-            value: `$${analytics.revenue.total.toFixed(2)}`,
-            change: `${analytics.revenue.growth >= 0 ? '+' : ''}${analytics.revenue.growth}%`,
+            value: `$${(safeAnalytics.revenue?.total || 0).toFixed(2)}`,
+            change: `${(safeAnalytics.revenue?.growth || 0) >= 0 ? '+' : ''}${safeAnalytics.revenue?.growth || 0}%`,
             icon: DollarSign,
             color: 'text-emerald-600',
             bg: 'bg-emerald-100'
         },
         {
             label: 'Total Orders',
-            value: analytics.orders.total.toString(),
-            change: `${analytics.orders.growth >= 0 ? '+' : ''}${analytics.orders.growth}%`,
+            value: (safeAnalytics.orders?.total || 0).toString(),
+            change: `${(safeAnalytics.orders?.growth || 0) >= 0 ? '+' : ''}${safeAnalytics.orders?.growth || 0}%`,
             icon: ShoppingBag,
             color: 'text-blue-600',
             bg: 'bg-blue-100'
         },
         {
             label: 'Active Stock',
-            value: analytics.activeStock ? analytics.activeStock.toString() : '0',
+            value: (safeAnalytics.activeStock || 0).toString(),
             change: '', // No growth metric for stock yet
             icon: ShoppingBag, // Or another icon like Package
             color: 'text-purple-600',
@@ -55,8 +65,8 @@ const AdminDashboard = () => {
         },
         {
             label: 'Total Customers',
-            value: analytics.customers.total.toString(),
-            change: `${analytics.customers.growth >= 0 ? '+' : ''}${analytics.customers.growth}%`,
+            value: (safeAnalytics.customers?.total || 0).toString(),
+            change: `${(safeAnalytics.customers?.growth || 0) >= 0 ? '+' : ''}${safeAnalytics.customers?.growth || 0}%`,
             icon: Users,
             color: 'text-purple-600',
             bg: 'bg-purple-100'
@@ -172,7 +182,7 @@ const AdminDashboard = () => {
                                     <div className="p-2 bg-blue-50 text-blue-600 rounded-lg group-hover:bg-blue-100"><CreditCard size={18} /></div>
                                     <span className="text-sm font-medium text-slate-600">Total Orders</span>
                                 </div>
-                                <span className="font-bold text-slate-900">{analytics?.orders.total || 0}</span>
+                                <span className="font-bold text-slate-900">{(safeAnalytics.orders?.total || 0).toString()}</span>
                             </div>
                             <div
                                 onClick={() => navigate('/admin/orders')}
@@ -194,7 +204,7 @@ const AdminDashboard = () => {
                                     <div className="p-2 bg-purple-50 text-purple-600 rounded-lg group-hover:bg-purple-100"><Users size={18} /></div>
                                     <span className="text-sm font-medium text-slate-600">Total Customers</span>
                                 </div>
-                                <span className="font-bold text-slate-900">{analytics?.customers.total || 0}</span>
+                                <span className="font-bold text-slate-900">{(safeAnalytics.customers?.total || 0).toString()}</span>
                             </div>
                         </div>
                     </div>
