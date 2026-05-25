@@ -6,10 +6,9 @@ import axios from "axios";
 import { listProductDetails, listProducts } from "../../redux/actions/productActions";
 import { addToCart } from "../../redux/actions/cartActions";
 
-const ProductDetails = () => {
+const ProductDetails = ({ productSlug: propSlug }) => {
     const pathname = usePathname();
     const router = useRouter();
-    const propSlug = undefined;
     const productSlug = propSlug || (pathname && pathname.split('/')[2]);
     const dispatch = useDispatch();
 
