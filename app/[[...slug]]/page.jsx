@@ -546,7 +546,8 @@ function getMetadataForPath(path) {
 }
 
 export async function generateMetadata({ params }) {
-  const path = getPathFromParams(params);
+  const resolvedParams = await params;
+  const path = getPathFromParams(resolvedParams);
   const pageMeta = getMetadataForPath(path);
   const canonicalUrl = `https://smartprintguide.com${path}`;
 
