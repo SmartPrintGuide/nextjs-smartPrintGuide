@@ -16,9 +16,9 @@ import {
     deleteProduct,
     createProduct,
     updateProduct
-} from '../../../redux/actions/productActions';
-import { listCategories } from '../../../redux/actions/categoryActions';
-import { PRODUCT_CREATE_RESET, PRODUCT_UPDATE_RESET } from '../../../redux/constants/productConstants';
+} from '../../../store/actions/productActions';
+import { listCategories } from '../../../store/actions/categoryActions';
+import { PRODUCT_CREATE_RESET, PRODUCT_UPDATE_RESET } from '../../../store/constants/productConstants';
 import ConfirmModal from '../../common/ConfirmModal';
 
 const AdminProducts = () => {
@@ -30,7 +30,7 @@ const AdminProducts = () => {
     const [debouncedSearchTerm, setDebouncedSearchTerm] = useState(searchTerm);
 
     const categoryList = useSelector((state) => state.categoryList);
-    const { categories } = categoryList;
+    const { loading: loadingCategories, error: errorCategories, categories } = categoryList;
 
     const productDelete = useSelector((state) => state.productDelete);
     const { loading: loadingDelete, error: errorDelete, success: successDelete } = productDelete;
@@ -55,6 +55,7 @@ const AdminProducts = () => {
     // Modal State
     const [showDeleteModal, setShowDeleteModal] = useState(false);
     const [itemToDelete, setItemToDelete] = useState(null);
+    const [isMounted, setIsMounted] = useState(false);
 
     const initialFormState = {
         brand: '',
@@ -79,6 +80,11 @@ const AdminProducts = () => {
     const [formData, setFormData] = useState(initialFormState);
     const [specType, setSpecType] = useState('text'); // 'text' | 'table'
     const [specRows, setSpecRows] = useState([{ key: '', value: '' }]);
+    // const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
 
     // Debounce search term
     useEffect(() => {
@@ -88,16 +94,11 @@ const AdminProducts = () => {
         return () => clearTimeout(handler);
     }, [searchTerm]);
 
-    // Load Quill CSS client-side to avoid SSR issues
-    useEffect(() => {
-        import('react-quill/dist/quill.snow.css').catch(() => {});
-    }, []);
-
     // Initial load and Search triggers
     useEffect(() => {
         // Always reset to page 1 when search changes or strictly initial load
         dispatch(listProducts(debouncedSearchTerm, '', 1));
-        dispatch(listCategories());
+        dispatch(listCategories(true));
     }, [dispatch, debouncedSearchTerm]);
 
     // Refresh on actions
@@ -373,6 +374,21 @@ const AdminProducts = () => {
         ],
     };
 
+    const renderQuillField = (fieldName, value) => {
+        if (!isMounted) {
+            return <div className="min-h-[220px] bg-slate-50 rounded-2xl border border-slate-200" />;
+        }
+
+        return (
+            <ReactQuill
+                theme="snow"
+                value={value}
+                onChange={(val) => handleQuillChange(fieldName, val)}
+                modules={quillModules}
+            />
+        );
+    };
+
     return (
         <div className="space-y-6 animate-in fade-in duration-500 pb-20">
             <ConfirmModal
@@ -463,18 +479,24 @@ const AdminProducts = () => {
                                 </div>
                                 <div className="space-y-1">
                                     <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Category</label>
-                                    <select
-                                        name="category"
-                                        value={formData.category}
-                                        onChange={handleInputChange}
-                                        className="w-full px-5 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none font-bold text-slate-800"
-                                        required
-                                    >
-                                        <option value="">Select Category</option>
-                                        {categories?.map(cat => (
-                                            <option key={cat._id} value={cat._id}>{cat.name}</option>
-                                        ))}
-                                    </select>
+                                    {errorCategories ? (
+                                        <div className="p-4 bg-red-50 text-red-600 rounded-xl border border-red-100 text-sm">
+                                            Unable to load categories: {errorCategories}
+                                        </div>
+                                    ) : (
+                                        <select
+                                            name="category"
+                                            value={formData.category}
+                                            onChange={handleInputChange}
+                                            className="w-full px-5 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none font-bold text-slate-800"
+                                            required
+                                        >
+                                            <option value="">{loadingCategories ? 'Loading categories...' : 'Select Category'}</option>
+                                            {categories?.map(cat => (
+                                                <option key={cat._id} value={cat._id}>{cat.name}</option>
+                                            ))}
+                                        </select>
+                                    )}
                                 </div>
                             </div>
                         </div>
@@ -692,23 +714,13 @@ const AdminProducts = () => {
                                 <div className="space-y-2">
                                     <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Highlights (Rich Text)</label>
                                     <div className="quill-container bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden">
-                                        <ReactQuill
-                                            theme="snow"
-                                            value={formData.shortDetails}
-                                            onChange={(val) => handleQuillChange('shortDetails', val)}
-                                            modules={quillModules}
-                                        />
+                                        {renderQuillField('shortDetails', formData.shortDetails)}
                                     </div>
                                 </div>
                                 <div className="space-y-2">
                                     <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Full Narrative Overview</label>
                                     <div className="quill-container bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden">
-                                        <ReactQuill
-                                            theme="snow"
-                                            value={formData.overview}
-                                            onChange={(val) => handleQuillChange('overview', val)}
-                                            modules={quillModules}
-                                        />
+                                        {renderQuillField('overview', formData.overview)}
                                     </div>
                                 </div>
                             </div>
@@ -725,12 +737,7 @@ const AdminProducts = () => {
                                 <div className="space-y-2">
                                     <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Keywords</label>
                                     <div className="quill-container bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden">
-                                        <ReactQuill
-                                            theme="snow"
-                                            value={formData.shortSpecification}
-                                            onChange={(val) => handleQuillChange('shortSpecification', val)}
-                                            modules={quillModules}
-                                        />
+                                        {renderQuillField('shortSpecification', formData.shortSpecification)}
                                     </div>
                                 </div>
 
@@ -757,12 +764,7 @@ const AdminProducts = () => {
 
                                     {specType === 'text' ? (
                                         <div className="quill-container bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden">
-                                            <ReactQuill
-                                                theme="snow"
-                                                value={formData.technicalSpecification}
-                                                onChange={(val) => handleQuillChange('technicalSpecification', val)}
-                                                modules={quillModules}
-                                            />
+                                            {renderQuillField('technicalSpecification', formData.technicalSpecification)}
                                         </div>
                                     ) : (
                                         <div className="bg-slate-50 rounded-2xl border border-slate-200 p-6 space-y-4">

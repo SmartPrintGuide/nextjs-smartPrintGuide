@@ -24,7 +24,8 @@ export const listCategories = (force = false) => async (dispatch, getState) => {
 
         dispatch({ type: CATEGORY_LIST_REQUEST });
 
-        const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/categories`);
+        const apiBase = process.env.NEXT_PUBLIC_API_URL || '/api';
+        const { data } = await axios.get(`${apiBase}/categories`);
 
         dispatch({
             type: CATEGORY_LIST_SUCCESS,
@@ -53,7 +54,8 @@ export const createCategory = (categoryData) => async (dispatch, getState) => {
             },
         };
 
-        const { data } = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/categories`, categoryData, config);
+        const apiBase = process.env.NEXT_PUBLIC_API_URL || '/api';
+        const { data } = await axios.post(`${apiBase}/categories`, categoryData, config);
 
         dispatch({
             type: CATEGORY_CREATE_SUCCESS,
@@ -82,7 +84,8 @@ export const updateCategory = (id, categoryData) => async (dispatch, getState) =
             },
         };
 
-        const { data } = await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/categories/${id}`, categoryData, config);
+        const apiBase = process.env.NEXT_PUBLIC_API_URL || '/api';
+        const { data } = await axios.put(`${apiBase}/categories/${id}`, categoryData, config);
 
         dispatch({
             type: CATEGORY_UPDATE_SUCCESS,
@@ -111,7 +114,8 @@ export const deleteCategory = (id) => async (dispatch, getState) => {
             },
         };
 
-        await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/categories/${id}`, config);
+        const apiBase = process.env.NEXT_PUBLIC_API_URL || '/api';
+        await axios.delete(`${apiBase}/categories/${id}`, config);
 
         dispatch({
             type: CATEGORY_DELETE_SUCCESS,

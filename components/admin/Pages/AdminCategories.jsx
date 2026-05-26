@@ -6,8 +6,8 @@ import {
     createCategory,
     updateCategory,
     deleteCategory
-} from '../../../redux/actions/categoryActions';
-import { CATEGORY_CREATE_RESET, CATEGORY_UPDATE_RESET } from '../../../redux/constants/categoryConstants';
+} from '../../../store/actions/categoryActions';
+import { CATEGORY_CREATE_RESET, CATEGORY_UPDATE_RESET } from '../../../store/constants/categoryConstants';
 import ConfirmModal from '../../common/ConfirmModal';
 
 const AdminCategories = () => {
