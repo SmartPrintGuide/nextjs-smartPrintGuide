@@ -2,12 +2,10 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchUserChat, sendChatMessage } from '../../redux/actions/chatActions';
 import { MessageCircle, Send, X, Minimize2, HelpCircle, Mail, Phone, Clock } from 'lucide-react';
-import io from 'socket.io-client';
 
 const HelpSupport = () => {
     const dispatch = useDispatch();
     const messagesEndRef = useRef(null);
-    const [socket, setSocket] = useState(null);
     const [chatOpen, setChatOpen] = useState(false);
     const [newMessage, setNewMessage] = useState('');
 
@@ -20,36 +18,22 @@ const HelpSupport = () => {
     useEffect(() => {
         if (userInfo && !userInfo.isAdmin) {
             dispatch(fetchUserChat());
-
-            // Initialize Socket.io
-            const newSocket = io('https://printersbackend.onrender.com', {
-                auth: { token: userInfo.token }
-            });
-
-            newSocket.on('connect', () => {
-                // ...existing code...
-            });
-
-            newSocket.on('new-message', (data) => {
-                // Refresh chat when new message arrives
-                dispatch(fetchUserChat());
-            });
-
-            setSocket(newSocket);
-
-            return () => newSocket.close();
         }
+    }, [dispatch, userInfo]);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            if (userInfo && !userInfo.isAdmin) {
+                dispatch(fetchUserChat());
+            }
+        }, 8000);
+
+        return () => clearInterval(interval);
     }, [dispatch, userInfo]);
 
     useEffect(() => {
         scrollToBottom();
     }, [chat]);
-
-    useEffect(() => {
-        if (chat && socket) {
-            socket.emit('join-chat', chat._id);
-        }
-    }, [chat, socket]);
 
     const scrollToBottom = () => {
         messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -60,20 +44,6 @@ const HelpSupport = () => {
         if (!newMessage.trim() || !chat) return;
 
         dispatch(sendChatMessage(chat._id, newMessage));
-
-        // Emit socket event for real-time update
-        if (socket) {
-            socket.emit('send-message', {
-                chatId: chat._id,
-                message: newMessage,
-                sender: {
-                    _id: userInfo._id,
-                    name: userInfo.name,
-                    isAdmin: false
-                }
-            });
-        }
-
         setNewMessage('');
     };
 

@@ -18,7 +18,8 @@ export const fetchAnalytics = () => async (dispatch, getState) => {
             },
         };
 
-        const { data } = await axios.get(`/api/dashboard/analytics`, config);
+        const apiBase = process.env.NEXT_PUBLIC_API_URL || '/api';
+        const { data } = await axios.get(`${apiBase}/dashboard/analytics`, config);
 
         dispatch({
             type: ANALYTICS_SUCCESS,

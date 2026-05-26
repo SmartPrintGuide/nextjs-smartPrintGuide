@@ -42,6 +42,7 @@ const AdminCategories = () => {
             dispatch({ type: CATEGORY_CREATE_RESET });
             setIsFormOpen(false);
             setName('');
+            dispatch(listCategories(true));
         }
 
         if (successUpdate) {
@@ -49,6 +50,7 @@ const AdminCategories = () => {
             setIsFormOpen(false);
             setEditingId(null);
             setName('');
+            dispatch(listCategories(true));
         }
 
         if (successDelete) {

@@ -1,6 +1,7 @@
+'use client';
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import ReactQuill from 'react-quill';
+import dynamic from 'next/dynamic';
 import 'react-quill/dist/quill.snow.css';
 import {
     Plus, Search, Trash2, Edit, X, Save,
@@ -8,6 +9,8 @@ import {
     AlignLeft, Microscope, Layers, AlertCircle,
     CheckCircle2
 } from 'lucide-react';
+
+const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
 import {
     listProducts,
     deleteProduct,
@@ -84,6 +87,11 @@ const AdminProducts = () => {
         }, 500);
         return () => clearTimeout(handler);
     }, [searchTerm]);
+
+    // Load Quill CSS client-side to avoid SSR issues
+    useEffect(() => {
+        import('react-quill/dist/quill.snow.css').catch(() => {});
+    }, []);
 
     // Initial load and Search triggers
     useEffect(() => {

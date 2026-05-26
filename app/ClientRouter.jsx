@@ -33,6 +33,13 @@ const ProductDetails = dynamic(() => import('../components/productsCategories/Pr
 const Search = dynamic(() => import('../components/Search'), { ssr: false });
 const AdminLogin = dynamic(() => import('../components/admin/Auth/AdminLogin'), { ssr: false });
 const AdminDashboard = dynamic(() => import('../components/admin/Pages/AdminDashboard'), { ssr: false });
+const AdminCategories = dynamic(() => import('../components/admin/Pages/AdminCategories'), { ssr: false });
+const AdminProducts = dynamic(() => import('../components/admin/Pages/AdminProducts'), { ssr: false });
+const AdminCustomers = dynamic(() => import('../components/admin/Pages/AdminCustomers'), { ssr: false });
+const AdminOrders = dynamic(() => import('../components/admin/Pages/AdminOrders'), { ssr: false });
+const AdminChat = dynamic(() => import('../components/admin/Pages/AdminChat'), { ssr: false });
+const AdminAnalytics = dynamic(() => import('../components/admin/Pages/AdminAnalytics'), { ssr: false });
+const AdminSettings = dynamic(() => import('../components/admin/Pages/AdminSettings'), { ssr: false });
 const AdminLayout = dynamic(() => import('../components/admin/Layout/AdminLayout'), { ssr: false });
 
 // Policy and Info Pages
@@ -107,6 +114,13 @@ export default function ClientRouter() {
   // Admin routes (simple handling)
   if (pathname === '/admin/login') return <AdminLogin />;
   if (pathname === '/admin' || pathname === '/admin/dashboard') return <AdminLayout><AdminDashboard /></AdminLayout>;
+  if (pathname === '/admin/categories') return <AdminLayout><AdminCategories /></AdminLayout>;
+  if (pathname === '/admin/products') return <AdminLayout><AdminProducts /></AdminLayout>;
+  if (pathname === '/admin/customers') return <AdminLayout><AdminCustomers /></AdminLayout>;
+  if (pathname === '/admin/orders') return <AdminLayout><AdminOrders /></AdminLayout>;
+  if (pathname === '/admin/chat') return <AdminLayout><AdminChat /></AdminLayout>;
+  if (pathname === '/admin/analytics') return <AdminLayout><AdminAnalytics /></AdminLayout>;
+  if (pathname === '/admin/settings') return <AdminLayout><AdminSettings /></AdminLayout>;
 
   // Static pages mapped to actual components
   const staticMap = {

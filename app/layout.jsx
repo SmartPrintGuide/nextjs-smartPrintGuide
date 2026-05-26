@@ -1,8 +1,6 @@
 import './globals.css';
 import Providers from '@/components/Providers';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import ScrollToTop from '@/components/ScrollToTop';
+import AppShell from '@/components/AppShell';
 
 export const metadata = {
   title: 'SmartPrintGuide - Printers, Ink, Toner, and Office Supplies',
@@ -14,10 +12,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="min-h-screen flex flex-col">
         <Providers>
-          <Header />
-          <ScrollToTop />
-          <main className="flex-grow">{children}</main>
-          <Footer />
+          <AppShell>{children}</AppShell>
         </Providers>
       </body>
     </html>

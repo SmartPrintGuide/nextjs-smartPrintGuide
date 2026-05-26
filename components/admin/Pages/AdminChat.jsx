@@ -1,13 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchAllChats, fetchChatById, sendChatMessage, markChatAsRead } from '../../../redux/actions/chatActions';
 import { Search, Send, User, MoreVertical, Phone, Video, ChevronLeft, MessageCircle } from 'lucide-react';
-import io from 'socket.io-client';
 
 const AdminChat = () => {
     const dispatch = useDispatch();
     const messagesEndRef = useRef(null);
-    const [socket, setSocket] = useState(null);
     const [showMobileList, setShowMobileList] = useState(true);
     const [activeChat, setActiveChat] = useState(null);
     const [newMessage, setNewMessage] = useState('');
@@ -25,29 +23,21 @@ const AdminChat = () => {
     useEffect(() => {
         if (userInfo && userInfo.isAdmin) {
             dispatch(fetchAllChats());
-
-            // Initialize Socket.io
-            const newSocket = io('https://printersbackend.onrender.com', {
-                auth: { token: userInfo.token }
-            });
-
-            newSocket.on('connect', () => {
-                // ...existing code...
-            });
-
-            newSocket.on('new-message', (data) => {
-                // Refresh chat list and current chat if it's the active one
-                dispatch(fetchAllChats());
-                if (activeChat && data.chatId === activeChat._id) {
-                    dispatch(fetchChatById(data.chatId));
-                }
-            });
-
-            setSocket(newSocket);
-
-            return () => newSocket.close();
         }
     }, [dispatch, userInfo]);
+
+    useEffect(() => {
+        let interval;
+        if (userInfo && userInfo.isAdmin) {
+            interval = setInterval(() => {
+                dispatch(fetchAllChats());
+                if (activeChat?._id) {
+                    dispatch(fetchChatById(activeChat._id));
+                }
+            }, 8000);
+        }
+        return () => clearInterval(interval);
+    }, [dispatch, userInfo, activeChat?._id]);
 
     useEffect(() => {
         scrollToBottom();
@@ -66,11 +56,6 @@ const AdminChat = () => {
         if (chat.unreadCount > 0) {
             dispatch(markChatAsRead(chat._id));
         }
-
-        // Join chat room
-        if (socket) {
-            socket.emit('join-chat', chat._id);
-        }
     };
 
     const handleSend = (e) => {
@@ -78,20 +63,7 @@ const AdminChat = () => {
         if (!newMessage.trim() || !activeChat) return;
 
         dispatch(sendChatMessage(activeChat._id, newMessage));
-
-        // Emit socket event for real-time update
-        if (socket) {
-            socket.emit('send-message', {
-                chatId: activeChat._id,
-                message: newMessage,
-                sender: {
-                    _id: userInfo._id,
-                    name: userInfo.name,
-                    isAdmin: true
-                }
-            });
-        }
-
+        dispatch(fetchAllChats());
         setNewMessage('');
     };
 

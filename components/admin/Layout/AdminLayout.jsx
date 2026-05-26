@@ -99,30 +99,17 @@ const AdminLayout = ({ children }) => {
 
     const fetchNotifications = async () => {
         try {
-            const token = userInfo?.token;
-            if (!token) {
-                console.warn('Skipping notifications fetch because admin token is missing');
-                setNotifications([]);
-                return;
-            }
-
-            const apiBase = typeof window !== 'undefined' ? window.location.origin : '';
             const config = {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                    Accept: 'application/json',
-                },
+                headers: { Authorization: `Bearer ${userInfo.token}` }
             };
 
             // Fetch Chats (Admin sees all chats)
-            const chatsUrl = `${apiBase}/api/chats`;
-            const { data: chats } = await axios.get(chatsUrl, config);
-            const unreadChats = Array.isArray(chats) ? chats.filter(c => c.unreadCount > 0) : [];
+            const { data: chats } = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/chats`, config);
+            const unreadChats = chats.filter(c => c.unreadCount > 0);
 
             // Fetch Orders (Recent & Processing)
-            const ordersUrl = `${apiBase}/api/orders?limit=10&page=1`;
-            const { data: ordersData } = await axios.get(ordersUrl, config);
-            const recentOrders = ordersData?.orders || [];
+            const { data: ordersData } = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/orders?limit=10&page=1`, config);
+            const recentOrders = ordersData.orders || [];
 
             // Filter for 'Processing' or simply new orders (e.g. created in last 24h)
             // Here we prioritize Processing status as "Action Needed"
@@ -150,20 +137,7 @@ const AdminLayout = ({ children }) => {
             setNotifications(combined);
 
         } catch (error) {
-            const url = error.config?.url || 'unknown URL';
-            const code = error.code || 'no_code';
-            const status = error.response?.status;
-            const data = error.response?.data;
-
-            if (error.response) {
-                console.error("Failed to fetch notifications", { url, code, status, data });
-            } else if (error.request) {
-                console.error("Failed to fetch notifications: no response received", { url, code, request: error.request });
-            } else {
-                console.error("Failed to fetch notifications", { url, code, message: error.message });
-            }
-
-            setNotifications([]);
+            // silently handle notification fetch errors
         }
     };
 
