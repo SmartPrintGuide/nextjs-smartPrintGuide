@@ -205,6 +205,317 @@ const routeMetadata = {
   },
 };
 
+const routeKeywords = {
+  '/': [
+    'smartprintguide',
+    'printer guides',
+    'printer buying guide',
+    'best printers',
+    'printer supplies',
+    'office printer reviews',
+  ],
+  '/product-category/all-in-one-printers': [
+    'all-in-one printers',
+    'multifunction printers',
+    'printer copier scanner fax',
+    'home office printers',
+    'best all-in-one printer',
+  ],
+  '/home-printer': [
+    'home printers',
+    'best home printer',
+    'photo printer',
+    'compact printers',
+    'home printing solutions',
+  ],
+  '/office-printer': [
+    'office printers',
+    'business printers',
+    'high volume printer',
+    'network printer',
+    'business printing solutions',
+  ],
+  '/product-category/large-format-printers': [
+    'large format printers',
+    'wide format printer',
+    'banner printer',
+    'CAD printer',
+    'poster printer',
+  ],
+  '/product-category/inkjet-printers': [
+    'inkjet printers',
+    'color printer',
+    'photo printer',
+    'wireless printer',
+    'Epson printer',
+  ],
+  '/product-category/laser-printers': [
+    'laser printers',
+    'fast printer',
+    'business laser printer',
+    'laser toner',
+    'monochrome printer',
+  ],
+  '/product-category/led-printers': [
+    'LED printers',
+    'energy efficient printer',
+    'LED printer technology',
+    'compact LED printer',
+  ],
+  '/product-category/ink-toner': [
+    'ink cartridges',
+    'toner cartridges',
+    'HP ink',
+    'Canon toner',
+    'printer ink replacement',
+  ],
+  '/customer-service': [
+    'customer service',
+    'printer support',
+    'order help',
+    'return support',
+  ],
+  '/cart': [
+    'shopping cart',
+    'printer cart',
+    'checkout summary',
+    'saved items',
+  ],
+  '/checkout': [
+    'checkout',
+    'secure checkout',
+    'payment',
+    'order payment',
+  ],
+  '/profile': [
+    'profile',
+    'account settings',
+    'order history',
+    'personal details',
+  ],
+  '/profile/order-history': [
+    'order history',
+    'purchase history',
+    'past orders',
+    'order tracking',
+  ],
+  '/order-history': [
+    'order history',
+    'purchase history',
+    'past orders',
+    'order tracking',
+  ],
+  '/blogs': [
+    'printer blog',
+    'printing tips',
+    'printer guides',
+    'printing advice',
+  ],
+  '/blogs/choosing-right-printer-home-office': [
+    'home office printer',
+    'printer buying guide',
+    'best printer for home office',
+    'printer recommendations',
+  ],
+  '/blogs/printer-maintenance-guide': [
+    'printer maintenance',
+    'printer cleaning tips',
+    'printer troubleshooting',
+    'printer care',
+  ],
+  '/blogs/save-printing-costs-guide': [
+    'save printing costs',
+    'printer cost savings',
+    'ink saving tips',
+    'toner cost reduction',
+  ],
+  '/blogs/top-7-printing-mistakes': [
+    'printing mistakes',
+    'printer troubleshooting',
+    'print quality issues',
+    'avoid printing errors',
+  ],
+  '/blogs/small-business-printing-essential-tools': [
+    'small business printing',
+    'business printer tools',
+    'printer setup',
+    'office printing tips',
+  ],
+  '/faq': [
+    'printer FAQ',
+    'printer questions',
+    'printer support answers',
+    'order questions',
+  ],
+  '/about': [
+    'about SmartPrintGuide',
+    'company information',
+    'printer guide company',
+  ],
+  '/privacy-policy': [
+    'privacy policy',
+    'data privacy',
+    'customer privacy',
+  ],
+  '/terms-and-conditions': [
+    'terms and conditions',
+    'website terms',
+    'purchase terms',
+  ],
+  '/refund-return-policy': [
+    'refund policy',
+    'return policy',
+    'refund options',
+  ],
+  '/return-exchange-policy': [
+    'exchange policy',
+    'return policy',
+    'product exchange',
+  ],
+  '/shipping-policy': [
+    'shipping policy',
+    'delivery policy',
+    'shipping details',
+  ],
+  '/cookie-policy': [
+    'cookie policy',
+    'website cookies',
+    'tracking policy',
+  ],
+  '/accessibility-statement': [
+    'accessibility statement',
+    'digital accessibility',
+    'accessible website',
+  ],
+  '/disclaimer': [
+    'disclaimer',
+    'legal disclaimer',
+    'website disclaimer',
+  ],
+  '/consumer-rights': [
+    'consumer rights',
+    'customer rights',
+    'privacy rights',
+  ],
+  '/do-not-sell-or-share-my-personal-information': [
+    'do not sell my information',
+    'privacy request',
+    'opt out of data sale',
+  ],
+  '/track-order': [
+    'track order',
+    'order tracking',
+    'shipment status',
+  ],
+  '/returns-exchanges': [
+    'returns',
+    'exchanges',
+    'return request',
+  ],
+  '/help-center': [
+    'help center',
+    'support resources',
+    'customer help',
+  ],
+  '/printer-buying-guide': [
+    'printer buying guide',
+    'printer comparison',
+    'best printer buying tips',
+  ],
+  '/guides-resources': [
+    'printer guides',
+    'printing resources',
+    'office printing help',
+  ],
+  '/admin/login': [
+    'admin login',
+    'admin access',
+    'dashboard login',
+  ],
+  '/admin': [
+    'admin dashboard',
+    'admin panel',
+    'site admin',
+  ],
+  '/admin/dashboard': [
+    'admin dashboard',
+    'admin panel',
+    'site admin',
+  ],
+  '/admin/categories': [
+    'admin categories',
+    'manage categories',
+    'category management',
+  ],
+  '/admin/products': [
+    'admin products',
+    'manage products',
+    'product management',
+  ],
+  '/admin/customers': [
+    'admin customers',
+    'manage customers',
+    'customer management',
+  ],
+  '/admin/orders': [
+    'admin orders',
+    'manage orders',
+    'order management',
+  ],
+  '/admin/chat': [
+    'admin chat',
+    'manage chat',
+    'support chat',
+  ],
+  '/admin/analytics': [
+    'admin analytics',
+    'site analytics',
+    'dashboard reports',
+  ],
+  '/admin/settings': [
+    'admin settings',
+    'site settings',
+    'configuration',
+  ],
+};
+
+function getKeywordsForPath(path) {
+  if (routeKeywords[path]) return routeKeywords[path];
+  if (path.startsWith('/blogs/')) {
+    return [
+      'printer blog',
+      'printing tips',
+      'printer guides',
+      'printing advice',
+      'printer reviews',
+    ];
+  }
+  if (path.startsWith('/product/')) {
+    return [
+      'printer product details',
+      'printer specs',
+      'printer features',
+      'buy printer online',
+      'printer comparison',
+    ];
+  }
+  if (path.startsWith('/admin')) {
+    return [
+      'admin area',
+      'admin dashboard',
+      'site management',
+    ];
+  }
+  return [
+    'smartprintguide',
+    'printers',
+    'ink cartridges',
+    'toner cartridges',
+    'printer supplies',
+    'printer buying guide',
+  ];
+};
+
 const defaultMetadata = {
   title: 'SmartPrintGuide - Printers, Ink, Toner, and Office Supplies',
   description: 'Find the best printers, ink, toner, and printing guides at SmartPrintGuide. Shop home and office printing supplies with expert support.',
@@ -242,15 +553,7 @@ export async function generateMetadata({ params }) {
   return {
     title: pageMeta.title,
     description: pageMeta.description,
-    keywords: [
-      'smartprintguide',
-      'printers',
-      'ink cartridges',
-      'toner cartridges',
-      'printer supplies',
-      'printer guides',
-      'buy printers online',
-    ],
+    keywords: getKeywordsForPath(path),
     alternates: {
       canonical: canonicalUrl,
     },
