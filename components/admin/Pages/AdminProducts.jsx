@@ -326,14 +326,18 @@ const AdminProducts = () => {
 
         // Add form fields
         Object.keys(formData).forEach(key => {
+            const value = formData[key];
+
             if (key === 'images') {
-                data.append('existingImages', JSON.stringify(formData.images));
+                data.append('existingImages', JSON.stringify(value));
             } else if (key === 'reviews') {
-                data.append('reviews', JSON.stringify(formData.reviews));
+                data.append('reviews', JSON.stringify(value));
             } else if (key === 'technicalSpecification') {
                 data.append('technicalSpecification', finalTechSpecs);
-            } else {
-                data.append(key, formData[key]);
+            } else if (Array.isArray(value)) {
+                data.append(key, JSON.stringify(value));
+            } else if (value !== undefined && value !== null) {
+                data.append(key, value);
             }
         });
 

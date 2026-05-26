@@ -29,20 +29,28 @@ const AdminLayout = ({ children }) => {
     const userLogin = useSelector((state) => state.userLogin);
     const { userInfo } = userLogin;
 
+    const [mounted, setMounted] = useState(false);
+
     // Auth Check
     useEffect(() => {
-        if (!userInfo || !userInfo.isAdmin) {
-            router.push('/admin/login');
-        }
-    }, [userInfo, router]);
-
-    // Time State
-    const [currentTime, setCurrentTime] = useState(new Date());
+        setMounted(true);
+    }, []);
 
     useEffect(() => {
+        if (mounted && (!userInfo || !userInfo.isAdmin)) {
+            router.push('/admin/login');
+        }
+    }, [mounted, userInfo, router]);
+
+    // Time State
+    const [currentTime, setCurrentTime] = useState(null);
+
+    useEffect(() => {
+        if (!mounted) return;
+        setCurrentTime(new Date());
         const timer = setInterval(() => setCurrentTime(new Date()), 1000);
         return () => clearInterval(timer);
-    }, []);
+    }, [mounted]);
 
     // Dropdown States
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -183,6 +191,10 @@ const AdminLayout = ({ children }) => {
         setProfileMode('details');
     };
 
+    if (!mounted) {
+        return <div className="flex h-screen bg-slate-50 overflow-hidden font-sans" />;
+    }
+
     if (!userInfo || !userInfo.isAdmin) return null;
 
     return (
@@ -204,7 +216,7 @@ const AdminLayout = ({ children }) => {
                         <div className="hidden md:flex items-center gap-2 text-slate-500 bg-slate-100 px-3 py-1.5 rounded-lg border border-slate-200">
                             <Clock size={14} />
                             <span className="text-xs font-semibold font-mono">
-                                {currentTime.toLocaleDateString()} • {currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                                {currentTime ? `${currentTime.toLocaleDateString()} • ${currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}` : 'Loading...'}
                             </span>
                         </div>
                     </div>
