@@ -1,6 +1,8 @@
+"use client";
+
 import React from "react";
 import { FaBox, FaExchangeAlt, FaTruck, FaCheckCircle, FaHeadset } from "react-icons/fa";
-"use client";
+
 
 import Link from "next/link";
 
