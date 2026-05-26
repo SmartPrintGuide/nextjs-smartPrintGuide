@@ -9,7 +9,7 @@ import { addToCart } from "../../redux/actions/cartActions";
 const ProductDetails = ({ productSlug: propSlug }) => {
     const pathname = usePathname();
     const router = useRouter();
-    const productSlug = propSlug || (pathname && pathname.split('/')[2]);
+    const productSlug = propSlug || (pathname && decodeURIComponent(pathname.split('/')[2] || ''));
     const dispatch = useDispatch();
 
     const [qty, setQty] = useState(1);
@@ -25,7 +25,9 @@ const ProductDetails = ({ productSlug: propSlug }) => {
     const { products: relatedProducts } = useSelector((state) => state.productList);
 
     useEffect(() => {
-        if (productSlug) dispatch(listProductDetails(productSlug));
+        if (productSlug) {
+            dispatch(listProductDetails(productSlug));
+        }
     }, [dispatch, productSlug]);
 
     useEffect(() => {
@@ -90,14 +92,21 @@ const ProductDetails = ({ productSlug: propSlug }) => {
         alert("Open review form here");
     };
 
-    if (loading)
+    if (loading || !productSlug)
         return (
             <div className="min-h-[60vh] flex justify-center items-center">
                 <div className="w-12 h-12 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin"></div>
             </div>
         );
 
-    if (error || !product)
+    if (error)
+        return (
+            <div className="text-center py-20 text-red-500 font-bold">
+                {error}
+            </div>
+        );
+
+    if (!product || !product._id)
         return (
             <div className="text-center py-20 text-red-500 font-bold">
                 Product Not Found

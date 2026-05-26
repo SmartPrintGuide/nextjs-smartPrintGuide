@@ -7,7 +7,9 @@ import { isValidObjectId } from 'mongoose';
 export async function GET(request, { params }) {
   try {
     await connectDB();
-    const { id } = await params;
+    const id = params?.id?.toString().trim();
+    if (!id) return NextResponse.json({ message: 'Product not found' }, { status: 404 });
+
     let product = null;
 
     if (isValidObjectId(id)) {
@@ -28,7 +30,8 @@ export async function GET(request, { params }) {
 export async function PUT(request, { params }) {
   try {
     await connectDB();
-    const { id } = await params;
+    const id = params?.id?.toString().trim();
+    if (!id) return NextResponse.json({ message: 'Product not found' }, { status: 404 });
     const user = await authenticate(request);
     if (!user || !user.isAdmin) return NextResponse.json({ message: 'Not authorized as admin' }, { status: 401 });
 
@@ -47,7 +50,8 @@ export async function PUT(request, { params }) {
 export async function DELETE(request, { params }) {
   try {
     await connectDB();
-    const { id } = await params;
+    const id = params?.id?.toString().trim();
+    if (!id) return NextResponse.json({ message: 'Product not found' }, { status: 404 });
     const user = await authenticate(request);
     if (!user || !user.isAdmin) return NextResponse.json({ message: 'Not authorized as admin' }, { status: 401 });
 

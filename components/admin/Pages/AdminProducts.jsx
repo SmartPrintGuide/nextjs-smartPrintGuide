@@ -10,7 +10,28 @@ import {
     CheckCircle2
 } from 'lucide-react';
 
-const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
+const ReactQuill = dynamic(
+    async () => {
+        const [quillModule, reactDom] = await Promise.all([
+            import('react-quill'),
+            import('react-dom')
+        ]);
+
+        const ReactDOM = reactDom.default || reactDom;
+        if (ReactDOM && typeof ReactDOM.findDOMNode !== 'function') {
+            ReactDOM.findDOMNode = function (instance) {
+                if (!instance) return null;
+                return instance instanceof Element ? instance : instance?.base || null;
+            };
+        }
+
+        return quillModule.default || quillModule;
+    },
+    {
+        ssr: false,
+        loading: () => <div className="min-h-[220px] bg-slate-50 rounded-2xl border border-slate-200" />
+    }
+);
 import {
     listProducts,
     deleteProduct,
