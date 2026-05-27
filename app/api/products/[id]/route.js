@@ -84,6 +84,21 @@ async function parseRequestBody(request) {
       delete body.existingImages;
     }
 
+    const optionalEmptyArrays = ['technology', 'usageCategory', 'allInOneType', 'mainFunction'];
+    const optionalEmptyStrings = ['wireless'];
+
+    optionalEmptyArrays.forEach(key => {
+      if (Array.isArray(body[key]) && body[key].length === 0) {
+        delete body[key];
+      }
+    });
+
+    optionalEmptyStrings.forEach(key => {
+      if (body[key] === '') {
+        delete body[key];
+      }
+    });
+
     return body;
   }
 

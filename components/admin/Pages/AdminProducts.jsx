@@ -325,6 +325,9 @@ const AdminProducts = () => {
         }
 
         // Add form fields
+        const optionalEmptyArrays = ['technology', 'usageCategory', 'allInOneType', 'mainFunction'];
+        const optionalEmptyStrings = ['wireless'];
+
         Object.keys(formData).forEach(key => {
             const value = formData[key];
 
@@ -335,7 +338,12 @@ const AdminProducts = () => {
             } else if (key === 'technicalSpecification') {
                 data.append('technicalSpecification', finalTechSpecs);
             } else if (Array.isArray(value)) {
+                if (optionalEmptyArrays.includes(key) && value.length === 0) {
+                    return;
+                }
                 data.append(key, JSON.stringify(value));
+            } else if (optionalEmptyStrings.includes(key) && value === '') {
+                return;
             } else if (value !== undefined && value !== null) {
                 data.append(key, value);
             }
