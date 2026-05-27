@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import connectDB from '@/lib/db';
 import Product from '@/lib/models/Product';
+import Category from '@/lib/models/Category';
 import { authenticate } from '@/lib/auth';
 import { isValidObjectId } from 'mongoose';
 import { v2 as cloudinary } from 'cloudinary';
