@@ -3,6 +3,34 @@ import connectDB from '@/lib/db';
 import Product from '@/lib/models/Product';
 import Category from '@/lib/models/Category';
 import { authenticate } from '@/lib/auth';
+import { v2 as cloudinary } from 'cloudinary';
+
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
+
+async function uploadFileToCloudinary(file) {
+  const buffer = Buffer.from(await file.arrayBuffer());
+  return new Promise((resolve, reject) => {
+    const uploadStream = cloudinary.uploader.upload_stream(
+      {
+        folder: 'products',
+        resource_type: 'image',
+        transformation: [
+          { width: 800, height: 800, crop: 'limit' },
+          { quality: 'auto' }
+        ]
+      },
+      (error, result) => {
+        if (error) return reject(error);
+        resolve(result.secure_url);
+      }
+    );
+    uploadStream.end(buffer);
+  });
+}
 
 async function parseRequestBody(request) {
   const contentType = request.headers.get('content-type') || '';
@@ -28,10 +56,13 @@ async function parseRequestBody(request) {
         }
       } else if (key === 'images') {
         if (!body.images) body.images = [];
-        if (value && typeof value === 'object' && 'name' in value && 'size' in value) {
-          continue;
+        const isFile = value && typeof value === 'object' && typeof value.arrayBuffer === 'function';
+        if (isFile) {
+          const url = await uploadFileToCloudinary(value);
+          body.images.push(url);
+        } else {
+          body.images.push(value);
         }
-        body.images.push(value);
       } else if (typeof value === 'string' && value.startsWith('[') && value.endsWith(']')) {
         try {
           body[key] = JSON.parse(value);
@@ -43,6 +74,13 @@ async function parseRequestBody(request) {
       } else {
         body[key] = value;
       }
+    }
+
+    if (body.existingImages) {
+      const existingImages = Array.isArray(body.existingImages) ? body.existingImages : [body.existingImages];
+      const uploadedImages = Array.isArray(body.images) ? body.images : [];
+      body.images = [...existingImages, ...uploadedImages];
+      delete body.existingImages;
     }
 
     return body;
