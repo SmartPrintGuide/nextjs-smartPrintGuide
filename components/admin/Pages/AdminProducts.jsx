@@ -346,6 +346,16 @@ const AdminProducts = () => {
             data.append('images', file);
         });
 
+        // Debug: log what we're sending to the server
+        try {
+            console.log('Submitting product:', { editingId, existingImages: formData.images, selectedFilesCount: selectedFiles.length });
+            for (let pair of data.entries()) {
+                console.log('FormData entry:', pair[0], pair[1]);
+            }
+        } catch (e) {
+            // ignore logging errors in production
+        }
+
         if (editingId) {
             dispatch(updateProduct(editingId, data));
         } else {
