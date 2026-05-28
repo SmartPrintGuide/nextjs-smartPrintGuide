@@ -157,7 +157,8 @@ export async function PUT(request, { params }) {
     if (!product) return NextResponse.json({ message: 'Product not found' }, { status: 404 });
 
     if (updateData.hasOwnProperty('wireless') && updateData.wireless === '') {
-      product.wireless = undefined;
+      product.set('wireless', undefined);
+      product.markModified('wireless');
       delete updateData.wireless;
     }
 

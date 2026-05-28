@@ -181,7 +181,7 @@ const ProductDetails = ({ productSlug: propSlug }) => {
                             {Array.isArray(product.allInOneType) && product.allInOneType.length > 0 && (
                                 <span className="inline-block bg-purple-50 text-purple-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-purple-100">{product.allInOneType.join(', ')}</span>
                             )}
-                            {product.wireless && (
+                            {product.wireless && !(String(product.category?.name || product.category || '').trim().toLowerCase().includes('ink') || String(product.category?.name || product.category || '').trim().toLowerCase().includes('toner')) && (
                                 <span className="inline-block bg-green-50 text-green-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-green-100">Wireless: {product.wireless}</span>
                             )}
                             {Array.isArray(product.mainFunction) && product.mainFunction.length > 0 && (
