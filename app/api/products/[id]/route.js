@@ -35,6 +35,7 @@ async function uploadFileToCloudinary(file) {
 
 async function parseRequestBody(request) {
   const contentType = request.headers.get('content-type') || '';
+  const preserveEmptyStrings = request.method === 'PUT';
 
   if (contentType.includes('application/json')) {
     return await request.json();
@@ -94,7 +95,7 @@ async function parseRequestBody(request) {
     });
 
     optionalEmptyStrings.forEach(key => {
-      if (body[key] === '') {
+      if (body[key] === '' && !preserveEmptyStrings) {
         delete body[key];
       }
     });
@@ -154,6 +155,11 @@ export async function PUT(request, { params }) {
     }
 
     if (!product) return NextResponse.json({ message: 'Product not found' }, { status: 404 });
+
+    if (updateData.hasOwnProperty('wireless') && updateData.wireless === '') {
+      product.wireless = undefined;
+      delete updateData.wireless;
+    }
 
     Object.assign(product, updateData);
     const updatedProduct = await product.save();

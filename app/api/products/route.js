@@ -34,6 +34,7 @@ async function uploadFileToCloudinary(file) {
 
 async function parseRequestBody(request) {
   const contentType = request.headers.get('content-type') || '';
+  const preserveEmptyStrings = request.method === 'PUT';
 
   if (contentType.includes('application/json')) {
     return await request.json();
@@ -93,7 +94,7 @@ async function parseRequestBody(request) {
     });
 
     optionalEmptyStrings.forEach(key => {
-      if (body[key] === '') {
+      if (body[key] === '' && !preserveEmptyStrings) {
         delete body[key];
       }
     });

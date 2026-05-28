@@ -343,6 +343,9 @@ const AdminProducts = () => {
                 }
                 data.append(key, JSON.stringify(value));
             } else if (optionalEmptyStrings.includes(key) && value === '') {
+                if (editingId) {
+                    data.append(key, value);
+                }
                 return;
             } else if (value !== undefined && value !== null) {
                 data.append(key, value);
@@ -620,7 +623,7 @@ const AdminProducts = () => {
                                     onChange={handleInputChange}
                                     className="w-full px-5 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none font-bold text-slate-800"
                                 >
-                                    <option value="">Select Wireless</option>
+                                    <option value="">Not specified</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
                                 </select>
