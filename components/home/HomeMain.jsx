@@ -64,7 +64,7 @@ const HomeMain = () => {
             <Reviews />
             <StatsCircles />
             <ImportantInfoSection />
-            <ResourceCenter />
+            {/* <ResourceCenter /> */}
         </div>
     );
 };

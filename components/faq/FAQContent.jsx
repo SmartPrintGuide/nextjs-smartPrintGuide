@@ -130,7 +130,7 @@ const FAQContent = () => {
         <div className="text-center mb-12">
           <div className="mb-6">
             <img
-              src={heroImage}
+              src="/assets/faq.webp"
               alt="Smart ePrinting FAQ"
               className="w-full max-w-sm mx-auto h-40 object-cover rounded-lg shadow-md"
             />
