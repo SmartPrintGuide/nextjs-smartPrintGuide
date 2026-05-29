@@ -45,8 +45,8 @@ const Header = () => {
     {
       name: "Printers",
       dropdown: [
-        { name: "Home Printer", path: "/home-printer" },
-        { name: "Office Printer", path: "/office-printer" },
+        { name: "Home Printer", path: "/product-category/home-printer" },
+        { name: "Office Printer", path: "/product-category/office-printer" },
         { name: "Laser Printer", path: "/product-category/laser-printers" },
         { name: "Inkjet Printer", path: "/product-category/inkjet-printers" },
       ],

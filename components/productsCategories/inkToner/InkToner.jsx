@@ -3,10 +3,16 @@ import ProductRouteHeading from '../ProductRouteHeading'
 import CategoryScrollSection from '../CategoryScrollSection'
 import InkTonerProductList from './InkTonerProductList'
 import FeaturesSection from '../FeaturesSection'
+import CategoryHero from '../CategoryHero'
 
 function InkToner() {
     return (
         <>
+            <CategoryHero
+                desktopImage="/inkTonerBanner.webp"
+                mobileImage="/inkTonerBannerMobile.webp"
+                altText="Quality Ink and Toner Cartridges - SmartPrintGuide"
+            />
             <ProductRouteHeading
                 breadcrumbs={[
                     { label: "Home", link: "/" },

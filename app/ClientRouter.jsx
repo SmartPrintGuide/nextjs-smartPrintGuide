@@ -65,8 +65,8 @@ export default function ClientRouter() {
   // Simple pattern matching for dynamic routes
   if (pathname === '/') return renderWithShell(<HomeMain />);
   if (pathname === '/product-category/all-in-one-printers') return renderWithShell(<AllInOne />);
-  if (pathname === '/home-printer') return renderWithShell(<HomePrinterSection />);
-  if (pathname === '/office-printer') return renderWithShell(<OfficePrinterSection />);
+  if (pathname === '/product-category/home-printer') return renderWithShell(<HomePrinterSection />);
+  if (pathname === '/product-category/office-printer') return renderWithShell(<OfficePrinterSection />);
   if (pathname === '/product-category/large-format-printers') return renderWithShell(<LargeFormat />);
   if (pathname === '/product-category/inkjet-printers') return renderWithShell(<InkjetPrinters />);
   if (pathname === '/product-category/laser-printers') return renderWithShell(<LaserPrinters />);

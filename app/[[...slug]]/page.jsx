@@ -9,7 +9,7 @@ const routeMetadata = {
     title: 'All-in-One Printers | SmartPrintGuide',
     description: 'Shop all-in-one printers for home and office. Compare multifunction printers for copying, scanning, printing, and faxing.',
   },
-  '/home-printer': {
+  '/product-category/home-printer': {
     title: 'Best Home Printers | SmartPrintGuide',
     description: 'Discover the best home printers for photos, documents, and everyday use with ink and toner options.',
   },
@@ -221,7 +221,7 @@ const routeKeywords = {
     'home office printers',
     'best all-in-one printer',
   ],
-  '/home-printer': [
+  '/product-category/home-printer': [
     'home printers',
     'best home printer',
     'photo printer',
