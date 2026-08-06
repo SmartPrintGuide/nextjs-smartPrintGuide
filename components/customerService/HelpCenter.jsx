@@ -116,15 +116,15 @@ export default function HelpCenter() {
       </p>
       <div className="bg-white rounded-xl shadow-lg p-6 mb-8">
         <h2 className="text-xl font-bold text-blue-800 mb-2">Business Information</h2>
-        <p className="text-black">
-          Smart Print Guide<br />
-          7181 Beacon Dr 15<br />
-          Reno, NV 89506<br />
-          United States<br />
-          Email: <a href="mailto:support@smartprintguide.com" className="text-blue-600 underline">support@smartprintguide.com</a><br />
-          Website: <a href="https://www.smartprintguide.com" className="text-blue-600 underline">www.smartprintguide.com</a><br />
-          <span className="text-xs text-gray-500">Smart Print Guide operates exclusively as an online retail platform.</span>
-        </p>
+     <p className="text-black">
+  Smart Print Guide<br />
+  20503 Kohle Springs Ln<br />
+  Cypress, TX 77433<br />
+  United States<br />
+  Email: <a href="mailto:support@smartprintguide.com" className="text-blue-600 underline">support@smartprintguide.com</a><br />
+  Website: <a href="https://www.smartprintguide.com" className="text-blue-600 underline">www.smartprintguide.com</a><br />
+  <span className="text-xs text-gray-500">Smart Print Guide operates exclusively as an online retail platform.</span>
+</p>
       </div>
       {faqs.map((section, idx) => (
         <div key={section.category} className="mb-8">

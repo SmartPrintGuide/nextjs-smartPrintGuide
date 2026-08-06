@@ -81,14 +81,14 @@ const AccessibilityStatement = () => (
         </div>
         <div className="space-y-4">
           <h2 className="text-2xl font-semibold text-blue-700">10. Contact Information</h2>
-          <p className="text-gray-600 leading-relaxed">
-            Smart Print Guide<br />
-            7181 Beacon Dr 15<br />
-            Reno, NV 89506<br />
-            United States<br />
-            Email: <a href="mailto:support@smartprintguide.com" className="text-blue-700 underline">support@smartprintguide.com</a><br />
-            Website: <a href="https://www.smartprintguide.com" className="text-blue-700 underline">www.smartprintguide.com</a>
-          </p>
+         <p className="text-gray-600 leading-relaxed">
+  Smart Print Guide<br />
+  20503 Kohle Springs Ln<br />
+  Cypress, TX 77433<br />
+  United States<br />
+  Email: <a href="mailto:support@smartprintguide.com" className="text-blue-700 underline">support@smartprintguide.com</a><br />
+  Website: <a href="https://www.smartprintguide.com" className="text-blue-700 underline">www.smartprintguide.com</a>
+</p>
         </div>
       </div>
     </div>

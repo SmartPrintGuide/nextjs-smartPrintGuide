@@ -12,12 +12,15 @@ const PrinterBuyingGuide = () => (
     </section>
     <section className="space-y-2">
       <h3 className="text-lg font-bold text-blue-700">Business Information</h3>
-      <p className="text-black">
-        Smart Print Guide<br />7181 Beacon Dr 15<br />Reno, NV 89506<br />United States<br />
-        Email: <a href="mailto:support@smartprintguide.com" className="text-blue-600 underline">support@smartprintguide.com</a><br />
-        Website: <a href="https://www.smartprintguide.com" className="text-blue-600 underline">www.smartprintguide.com</a><br />
-        <span className="text-xs text-gray-500 block mt-2">Smart Print Guide operates as an independent online retailer.</span>
-      </p>
+<p className="text-black">
+  Smart Print Guide<br />
+  20503 Kohle Springs Ln<br />
+  Cypress, TX 77433<br />
+  United States<br />
+  Email: <a href="mailto:support@smartprintguide.com" className="text-blue-600 underline">support@smartprintguide.com</a><br />
+  Website: <a href="https://www.smartprintguide.com" className="text-blue-600 underline">www.smartprintguide.com</a><br />
+  <span className="text-xs text-gray-500 block mt-2">Smart Print Guide operates as an independent online retailer.</span>
+</p>
     </section>
     <section className="space-y-2">
       <h3 className="text-lg font-bold text-blue-700">1. Understanding Printer Types</h3>

@@ -13,14 +13,14 @@ const TermsAndConditions = () => (
         <div className="space-y-4">
           <h2 className="text-2xl font-semibold text-blue-700">1. Company Information</h2>
           <p className="text-gray-600 leading-relaxed">
-            Smart Print Guide<br />
-            7181 Beacon Dr 15<br />
-            Reno, NV 89506<br />
-            United States<br />
-            Email: <a href="mailto:support@smartprintguide.com" className="text-blue-700 underline">support@smartprintguide.com</a><br />
-            Website: <a href="https://www.smartprintguide.com" className="text-blue-700 underline">www.smartprintguide.com</a><br />
-            Smart Print Guide operates exclusively as an independent online retail platform.
-          </p>
+  Smart Print Guide<br />
+  20503 Kohle Springs Ln<br />
+  Cypress, TX 77433<br />
+  United States<br />
+  Email: <a href="mailto:support@smartprintguide.com" className="text-blue-700 underline">support@smartprintguide.com</a><br />
+  Website: <a href="https://www.smartprintguide.com" className="text-blue-700 underline">www.smartprintguide.com</a><br />
+  Smart Print Guide operates exclusively as an independent online retail platform.
+</p>
         </div>
         <div className="space-y-4">
           <h2 className="text-2xl font-semibold text-blue-700">2. Eligibility to Use the Website</h2>
@@ -137,15 +137,15 @@ const TermsAndConditions = () => (
         </div>
         <div className="space-y-4">
           <h2 className="text-2xl font-semibold text-blue-700">17. Contact Information</h2>
-          <p className="text-gray-600 leading-relaxed">
-            For questions regarding these Terms:<br />
-            Smart Print Guide<br />
-            7181 Beacon Dr 15<br />
-            Reno, NV 89506<br />
-            United States<br />
-            Email: <a href="mailto:support@smartprintguide.com" className="text-blue-700 underline">support@smartprintguide.com</a><br />
-            Website: <a href="https://www.smartprintguide.com" className="text-blue-700 underline">www.smartprintguide.com</a>
-          </p>
+        <p className="text-gray-600 leading-relaxed">
+  For questions regarding these Terms:<br />
+  Smart Print Guide<br />
+  20503 Kohle Springs Ln<br />
+  Cypress, TX 77433<br />
+  United States<br />
+  Email: <a href="mailto:support@smartprintguide.com" className="text-blue-700 underline">support@smartprintguide.com</a><br />
+  Website: <a href="https://www.smartprintguide.com" className="text-blue-700 underline">www.smartprintguide.com</a>
+</p>
         </div>
       </div>
     </div>

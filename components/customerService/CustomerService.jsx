@@ -215,7 +215,12 @@ const CustomerService = () => {
         </div>
         <div className="bg-blue-50 rounded-3xl shadow border border-blue-100 p-8 space-y-4">
           <h2 className="text-lg font-bold text-blue-900 uppercase tracking-tight mb-2">Mailing Address for Correspondence</h2>
-          <p className="text-black">Smart Print Guide<br />7181 Beacon Dr 15<br />Reno, NV 89506<br />United States</p>
+          <p className="text-black">
+  Smart Print Guide<br />
+  20503 Kohle Springs Ln<br />
+  Cypress, TX 77433<br />
+  United States
+</p>
         </div>
         {/* Website */}
         <div className="bg-white/80 rounded-3xl shadow-2xl border border-blue-200 p-8 space-y-4 backdrop-blur-md transition-all hover:scale-[1.02]">

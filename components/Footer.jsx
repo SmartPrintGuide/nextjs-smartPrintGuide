@@ -103,12 +103,12 @@ const Footer = () => {
                 support@smartprintguide.com
               </a>
             </li>
-            <li>
-              7181 Beacon Dr 15 <br />
-              Reno, NV 89506 <br />
-              United States
-            </li>
-            <li>Support: Monday–Friday, 9am–6pm ET</li>
+           <li>
+  20503 Kohle Springs Ln <br />
+  Cypress, TX 77433 <br />
+  United States
+</li>
+<li>Support: Monday–Friday, 9am–6pm ET</li>
 
           </ul>
         </div>

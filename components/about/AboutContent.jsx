@@ -173,14 +173,14 @@ const AboutContent = () => (
       {/* Contact Information */}
       <section className="bg-blue-50 rounded-xl shadow p-8">
         <h2 className="text-2xl font-bold text-blue-500 mb-3">Contact Information</h2>
-        <p className="text-black">
-          <span className="font-bold text-blue-500">Smart Print Guide</span><br/>
-          7181 Beacon Dr 15<br/>
-          Reno, NV 89506<br/>
-          United States<br/>
-          Email: <a href="mailto:support@smartprintguide.com" className="text-blue-600 underline">support@smartprintguide.com</a><br/>
-          Website: <a href="https://www.smartprintguide.com" className="text-blue-600 underline">www.smartprintguide.com</a>
-        </p>
+      <p className="text-black">
+  <span className="font-bold text-blue-500">Smart Print Guide</span><br/>
+  20503 Kohle Springs Ln<br/>
+  Cypress, TX 77433<br/>
+  United States<br/>
+  Email: <a href="mailto:support@smartprintguide.com" className="text-blue-600 underline">support@smartprintguide.com</a><br/>
+  Website: <a href="https://www.smartprintguide.com" className="text-blue-600 underline">www.smartprintguide.com</a>
+</p>
       </section>
     </div>
   </section>

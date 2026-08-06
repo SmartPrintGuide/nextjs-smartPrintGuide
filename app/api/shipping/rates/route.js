@@ -47,16 +47,16 @@ export async function POST(request) {
       email: body.email,
     });
 
-    const fromAddress = await client.Address.create({
-      verify: ['delivery'],
-      company: 'Smart Print Guide',
-      street1: process.env.COMPANY_ADDRESS || '7181 Beacon Dr 15',
-      city: process.env.COMPANY_CITY || 'Reno',
-      state: process.env.COMPANY_STATE || 'NV',
-      zip: process.env.COMPANY_ZIP || '89506',
-      country: process.env.COMPANY_COUNTRY || 'US',
-      phone: process.env.COMPANY_PHONE || '415-555-5555',
-    });
+  const fromAddress = await client.Address.create({
+  verify: ['delivery'],
+  company: 'Smart Print Guide',
+  street1: process.env.COMPANY_ADDRESS || '20503 Kohle Springs Ln',
+  city: process.env.COMPANY_CITY || 'Cypress',
+  state: process.env.COMPANY_STATE || 'TX',
+  zip: process.env.COMPANY_ZIP || '77433',
+  country: process.env.COMPANY_COUNTRY || 'US',
+  phone: process.env.COMPANY_PHONE || '415-555-5555',
+});
 
     const totalWeight = cartItems && cartItems.length > 0
       ? cartItems.reduce((acc, item) => acc + (16 * item.qty), 0)
