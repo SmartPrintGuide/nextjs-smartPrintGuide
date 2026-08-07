@@ -3,7 +3,7 @@
 import Script from 'next/script';
 import { MessageCircle } from 'lucide-react';
 
-const jivoWidgetId = process.env.NEXT_PUBLIC_JIVO_WIDGET_ID || 'REPLACE_WITH_JIVO_WIDGET_ID';
+const jivoWidgetId = process.env.NEXT_PUBLIC_JIVO_WIDGET_ID || 'XIBgC2jM7P';
 
 export default function JivoChat() {
   const openChat = () => {

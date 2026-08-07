@@ -5,10 +5,10 @@ import { useParams } from "next/navigation";
 import Image from "next/image";
 
 const brandSupportNumbers = {
-  HP: "+1 (855) 618-4642",
-  Brother: "+1 (855) 618-4642",
-  EPSON: "+1 (855) 618-4642",
-  Canon: "+1 (855) 618-4642",
+  HP: "+1 (877) 238-0240",
+  Brother: "+1 (877) 238-0240",
+  EPSON: "+1 (877) 238-0240",
+  Canon: "+1 (877) 238-0240",
 };
 
 const brandThemes = {
