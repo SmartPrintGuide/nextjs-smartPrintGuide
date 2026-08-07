@@ -37,7 +37,7 @@ const ChoosingPrinterGuide = () => {
                         </div>
                         <div className="flex items-center gap-2">
                             <User size={16} className="text-blue-600" />
-                            <span>By Smart ePrinting Team</span>
+                            <span>By Smart Print Guide Team</span>
                         </div>
                     </div>
                 </header>
@@ -391,7 +391,7 @@ const ChoosingPrinterGuide = () => {
                             Choosing the right home office printer doesn’t have to be confusing. When you understand your printing habits, workload, and budget, selecting the perfect device becomes simple.
                         </p>
                         <p className="font-medium text-white mb-8">
-                            At Smart ePrinting, we help customers find printers, ink, toner, and accessories that offer great performance at the right price — without the hassle.
+                            At Smart Print Guide, we help customers find printers, ink, toner, and accessories that offer great performance at the right price — without the hassle.
                         </p>
                         <Link href="/" className="inline-block bg-white text-blue-700 font-bold py-3 px-8 rounded-xl hover:bg-blue-50 transition-colors shadow-lg">
                             Find Your Perfect Printer

@@ -37,7 +37,7 @@ const PrintingMistakesGuide = () => {
                         </div>
                         <div className="flex items-center gap-2">
                             <User size={16} className="text-blue-600" />
-                            <span>By Smart ePrinting Team</span>
+                            <span>By Smart Print Guide Team</span>
                         </div>
                     </div>
                 </header>
@@ -161,7 +161,7 @@ const PrintingMistakesGuide = () => {
                         </div>
                         <div className="flex-1 bg-green-50 p-4 rounded-xl border border-green-100">
                             <h4 className="font-bold text-green-800 mb-2 flex items-center gap-2"><CheckCircle2 size={16}/> The Solution</h4>
-                            <p className="text-sm text-green-700">Use manufacturer-approved ink or reputable compatible ink from trusted suppliers like Smart ePrinting.</p>
+                            <p className="text-sm text-green-700">Use manufacturer-approved ink or reputable compatible ink from trusted suppliers like Smart Print Guide.</p>
                         </div>
                     </div>
 
@@ -262,7 +262,7 @@ const PrintingMistakesGuide = () => {
                             Print Smarter Today
                         </h2>
                         <p className="text-orange-100 text-lg mb-8 max-w-2xl mx-auto">
-                            Avoiding these common mistakes can instantly improve your printing experience. Smart ePrinting is committed to helping you print smarter every day.
+                            Avoiding these common mistakes can instantly improve your printing experience. Smart Print Guide is committed to helping you print smarter every day.
                         </p>
                         <Link href="/contact" className="inline-block bg-white text-orange-600 font-bold py-3 px-8 rounded-xl hover:bg-orange-50 transition-colors shadow-lg">
                             Get Expert Setup Help

@@ -1,6 +1,7 @@
 import './globals.css';
 import Providers from '@/components/Providers';
 import AppShell from '@/components/AppShell';
+import JivoChat from '@/components/JivoChat';
 
 export const metadata = {
   metadataBase: new URL('https://smartprintguide.com'),
@@ -91,6 +92,7 @@ export default function RootLayout({ children }) {
       <body className="min-h-screen flex flex-col">
         <Providers>
           <AppShell>{children}</AppShell>
+          <JivoChat />
         </Providers>
       </body>
     </html>

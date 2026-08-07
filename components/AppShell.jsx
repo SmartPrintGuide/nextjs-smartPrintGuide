@@ -8,13 +8,15 @@ import ScrollToTop from './ScrollToTop';
 export default function AppShell({ children }) {
   const pathname = usePathname() || '';
   const isAdminRoute = pathname.startsWith('/admin');
+  const isPrinterSetupRoute = pathname.startsWith('/printer-setup-and-troubleshooting');
+  const showMainShell = !isAdminRoute && !isPrinterSetupRoute;
 
   return (
     <>
-      {!isAdminRoute && <Header />}
-      {!isAdminRoute && <ScrollToTop />}
+      {showMainShell && <Header />}
+      {showMainShell && <ScrollToTop />}
       <main className="flex-grow">{children}</main>
-      {!isAdminRoute && <Footer />}
+      {showMainShell && <Footer />}
     </>
   );
 }

@@ -37,7 +37,7 @@ const PrinterMaintenanceGuide = () => {
                         </div>
                         <div className="flex items-center gap-2">
                             <User size={16} className="text-blue-600" />
-                            <span>By Smart ePrinting Team</span>
+                            <span>By Smart Print Guide Team</span>
                         </div>
                     </div>
                 </header>
@@ -349,7 +349,7 @@ const PrinterMaintenanceGuide = () => {
                             Your printer is a long-term investment. Regular maintenance ensures smooth performance, lower costs, and longer device life.
                         </p>
                         <p className="font-medium text-white mb-8">
-                            Smart ePrinting provides reliable printers, ink, toner, and accessories to support your everyday needs. Combine quality supplies with proper maintenance for optimal results.
+                            Smart Print Guide provides reliable printers, ink, toner, and accessories to support your everyday needs. Combine quality supplies with proper maintenance for optimal results.
                         </p>
                         <Link href="/product-category/ink-toner" className="inline-block bg-white text-green-700 font-bold py-3 px-8 rounded-xl hover:bg-green-50 transition-colors shadow-lg">
                             Get Quality Supplies

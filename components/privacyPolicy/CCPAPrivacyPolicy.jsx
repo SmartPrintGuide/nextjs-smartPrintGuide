@@ -8,13 +8,13 @@ const CCPAPrivacyPolicy = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900">
-            Do Not Sell or Share My Personal Information (CCPA/CPRA) — Smart ePrinting
+            Do Not Sell or Share My Personal Information (CCPA/CPRA) — Smart Print Guide
           </h1>
           <p className="mt-4 text-gray-600 text-base sm:text-lg leading-relaxed">
             Last Updated: January 31, 2026
           </p>
           <p className="mt-4 text-gray-600 text-base sm:text-lg leading-relaxed">
-            This page is provided in accordance with the California Consumer Privacy Act (CCPA) and the California Privacy Rights Act (CPRA). These laws give California residents specific rights regarding their personal information, including the right to opt out of its sale or sharing. Smart ePrinting does not sell or share personal information for monetary or marketing purposes, but this page ensures full transparency and allows you to exercise your privacy rights if desired.
+              This page is provided in accordance with the California Consumer Privacy Act (CCPA) and the California Privacy Rights Act (CPRA). These laws give California residents specific rights regarding their personal information, including the right to opt out of its sale or sharing. Smart Print Guide does not sell or share personal information for monetary or marketing purposes, but this page ensures full transparency and allows you to exercise your privacy rights if desired.
           </p>
         </div>
 
@@ -24,7 +24,7 @@ const CCPAPrivacyPolicy = () => {
           <div className="space-y-4">
             <h2 className="text-2xl font-semibold text-gray-900">1. Our Commitment to Your Privacy</h2>
             <p className="text-gray-600 leading-relaxed">
-              Smart ePrinting is committed to maintaining high standards of data privacy, transparency, and security. We strictly limit the collection and use of your personal information to essential business functions such as:
+              Smart Print Guide is committed to maintaining high standards of data privacy, transparency, and security. We strictly limit the collection and use of your personal information to essential business functions such as:
             </p>
             <ul className="list-disc list-inside text-gray-600 space-y-1">
               <li>Processing orders</li>
@@ -49,7 +49,7 @@ const CCPAPrivacyPolicy = () => {
               <li><strong>“Share”</strong>: Transfer of personal information to a third party for cross-context behavioral advertising.</li>
             </ul>
             <p className="text-gray-600 leading-relaxed">
-              Important Statement: Smart ePrinting does NOT sell or share your personal information as defined under CCPA/CPRA. We do not use cross-site tracking, profiling, third-party marketing cookies, or advertising pixels.
+              Important Statement: Smart Print Guide does NOT sell or share your personal information as defined under CCPA/CPRA. We do not use cross-site tracking, profiling, third-party marketing cookies, or advertising pixels.
             </p>
           </div>
 
@@ -76,7 +76,7 @@ const CCPAPrivacyPolicy = () => {
               Even though we do not sell or share personal information, you may submit a request:
             </p>
             <p className="text-gray-600 leading-relaxed">
-              📧 Email: <a href="mailto:support@smarteprinting.com" className="text-indigo-600 underline">support@smarteprinting.com</a><br/>
+              Email: <a href="mailto:support@smartprintguide.com" className="text-indigo-600 underline">support@smartprintguide.com</a><br/>
               Subject Line: CCPA Privacy Request
             </p>
             <p className="text-gray-600 leading-relaxed">
@@ -152,10 +152,10 @@ const CCPAPrivacyPolicy = () => {
           <div className="space-y-4">
             <h2 className="text-2xl font-semibold text-gray-900">9. No Sale or Sharing Statement (Required)</h2>
             <ul className="list-disc list-inside text-gray-600 space-y-1">
-              <li>✓ Smart ePrinting does NOT sell personal information.</li>
-              <li>✓ Smart ePrinting does NOT share personal information for advertising.</li>
-              <li>✓ Smart ePrinting has not sold or shared personal information in the past 12 months.</li>
-              <li>✓ Smart ePrinting does not knowingly collect or sell the information of minors under 16.</li>
+              <li>✓ Smart Print Guide does NOT sell personal information.</li>
+              <li>✓ Smart Print Guide does NOT share personal information for advertising.</li>
+              <li>✓ Smart Print Guide has not sold or shared personal information in the past 12 months.</li>
+              <li>✓ Smart Print Guide does not knowingly collect or sell the information of minors under 16.</li>
             </ul>
           </div>
 
@@ -189,11 +189,11 @@ const CCPAPrivacyPolicy = () => {
           <div className="space-y-4">
             <h2 className="text-2xl font-semibold text-gray-900">12. Contact Us Regarding Your Privacy Rights</h2>
             <p className="text-gray-600 leading-relaxed">
-              Smart ePrinting<br />
+              Smart Print Guide<br />
               17807 Lakecrest View Drive, #1205<br />
               Cypress, TX 77433, United States<br />
-              Email: <a href="mailto:support@smarteprinting.com" className="text-indigo-600 underline">support@smarteprinting.com</a><br />
-              Website: <a href="https://www.smarteprinting.com" target="_blank" rel="noopener noreferrer" className="text-indigo-600 underline">www.smarteprinting.com</a>
+              Email: <a href="mailto:support@smartprintguide.com" className="text-indigo-600 underline">support@smartprintguide.com</a><br />
+              Website: <a href="https://www.smartprintguide.com" target="_blank" rel="noopener noreferrer" className="text-indigo-600 underline">www.smartprintguide.com</a>
             </p>
           </div>
 

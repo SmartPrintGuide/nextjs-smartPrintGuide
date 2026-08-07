@@ -49,11 +49,11 @@ export async function POST(request) {
     }
 
     await sendEmail({
-      to: process.env.CONTACT_RECEIVER_EMAIL || 'support@smarteprinting.com',
+      to: process.env.CONTACT_RECEIVER_EMAIL || 'support@smartprintguide.com',
       subject,
       html,
       text,
-      from: `"${fromName}" <${process.env.EMAIL_FROM || 'no-reply@smarteprinting.com'}>`,
+      from: `"${fromName}" <${process.env.EMAIL_FROM || 'no-reply@smartprintguide.com'}>`,
       replyTo: replyToEmail,
     });
 

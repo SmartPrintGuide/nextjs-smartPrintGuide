@@ -13,7 +13,7 @@ const FAQContent = () => {
       category: "Product & Compatibility Questions",
       questions: [
         {
-          q: "What types of products does Smart ePrinting offer?",
+          q: "What types of products does Smart Print Guide offer?",
           a: "We offer a wide selection of printers, ink cartridges, toner cartridges, and printing supplies for home and office needs."
         },
         {
@@ -77,7 +77,7 @@ const FAQContent = () => {
         },
         {
           q: "How do I start a return?",
-          a: "Email us at support@smarteprinting.com with your order number and return request. We will provide instructions and next steps."
+          a: "Email us at support@smartprintguide.com with your order number and return request. We will provide instructions and next steps."
         },
         {
           q: "How long does it take to receive a refund?",
@@ -102,8 +102,8 @@ const FAQContent = () => {
       category: "Brand Independence",
       questions: [
         {
-          q: "Is Smart ePrinting affiliated with any printer brands?",
-          a: "No. Smart ePrinting is an independent online retailer. All product names, logos, and trademarks belong to their respective owners and are used solely for identification and compatibility purposes."
+          q: "Is Smart Print Guide affiliated with any printer brands?",
+          a: "No. Smart Print Guide is an independent online retailer. All product names, logos, and trademarks belong to their respective owners and are used solely for identification and compatibility purposes."
         }
       ]
     },
@@ -116,7 +116,7 @@ const FAQContent = () => {
         },
         {
           q: "How can I contact customer support?",
-          a: "You can reach us at: 📧 Email: support@smarteprinting.com 🌐 Website: www.smarteprinting.com"
+          a: "You can reach us at: Email: support@smartprintguide.com Website: www.smartprintguide.com"
         }
       ]
     }
@@ -131,12 +131,12 @@ const FAQContent = () => {
           <div className="mb-6">
             <img
               src="/assets/faq.webp"
-              alt="Smart ePrinting FAQ"
+              alt="Smart Print Guide FAQ"
               className="w-full max-w-sm mx-auto h-40 object-cover rounded-lg shadow-md"
             />
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            FAQs – Smart ePrinting
+              FAQs – Smart Print Guide
           </h1>
           <p className="max-w-3xl mx-auto text-gray-600 text-base sm:text-lg">
             Find quick answers to common questions about our products, orders, shipping, and general shopping experience. If you need help, our team is here to assist you with product inquiries and order-related questions.
@@ -197,11 +197,11 @@ const FAQContent = () => {
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 text-gray-700">
             <div className="flex items-center">
               <span className="mr-2 text-lg">📧</span>
-              <span className="font-medium">support@smarteprinting.com</span>
+              <span className="font-medium">support@smartprintguide.com</span>
             </div>
             <div className="flex items-center">
               <span className="mr-2 text-lg">🌐</span>
-              <span className="font-medium">www.smarteprinting.com</span>
+              <span className="font-medium">www.smartprintguide.com</span>
             </div>
           </div>
         </div>

@@ -37,7 +37,7 @@ const SmallBusinessPrintingGuide = () => {
                         </div>
                         <div className="flex items-center gap-2">
                             <User size={16} className="text-blue-600" />
-                            <span>By Smart ePrinting Team</span>
+                            <span>By Smart Print Guide Team</span>
                         </div>
                     </div>
                 </header>

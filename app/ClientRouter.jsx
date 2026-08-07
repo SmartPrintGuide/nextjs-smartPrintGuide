@@ -58,7 +58,7 @@ import PrinterBuyingGuide from '../components/guides/PrinterBuyingGuide';
 import GuidesResources from '../components/guides/GuidesResources';
 
 export default function ClientRouter() {
-  const pathname = usePathname() || '/';
+  const pathname = (usePathname() || '/').replace(/\/+$/, '') || '/';
   const searchParams = useSearchParams();
   const router = useRouter();
 

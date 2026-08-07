@@ -37,7 +37,7 @@ const SavePrintingCostsGuide = () => {
                         </div>
                         <div className="flex items-center gap-2">
                             <User size={16} className="text-blue-600" />
-                            <span>By Smart ePrinting Team</span>
+                            <span>By Smart Print Guide Team</span>
                         </div>
                     </div>
                 </header>
@@ -212,7 +212,7 @@ const SavePrintingCostsGuide = () => {
                     </ul>
 
                     <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-6">9. Use Reputable Compatible Cartridges</h2>
-                    <p>Brand-name cartridges aren't the only option. Compatible cartridges from trusted suppliers like Smart ePrinting offer:</p>
+                    <p>Brand-name cartridges aren't the only option. Compatible cartridges from trusted suppliers like Smart Print Guide offer:</p>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4 text-center text-sm font-bold text-slate-600">
                         <div className="bg-slate-100 p-3 rounded-lg">Lower Cost</div>
                         <div className="bg-slate-100 p-3 rounded-lg">High Quality</div>

@@ -16,7 +16,7 @@ const BlogsMain = () => {
             title: "The Ultimate Guide to Choosing the Right Printer for Your Home Office",
             excerpt: "Setting up a productive home office requires the right tools, and one essential device you cannot overlook is your printer...",
             date: "February 12, 2026",
-            author: "Smart ePrinting Team",
+            author: "Smart Print Guide Team",
             image: printerguide,
             slug: "choosing-right-printer-home-office",
             category: "Buying Guide"
