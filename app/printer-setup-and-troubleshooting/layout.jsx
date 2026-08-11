@@ -17,20 +17,6 @@ export default function PrinterSetupLayout({ children }) {
         strategy="afterInteractive"
       />
 
-      {/* Google tag (gtag.js) */}
-      <Script
-        id="gtag-js"
-        src="https://www.googletagmanager.com/gtag/js?id=AW-18114921677"
-        strategy="afterInteractive"
-      />
-      <Script
-        id="gtag-inline-printer-setup"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-18114921677');`,
-        }}
-      />
-
       <noscript>
         <iframe
           src="https://ob.sornavellon.com/ns/6cd83818f302977b2729291478f5574c.html?ch="
