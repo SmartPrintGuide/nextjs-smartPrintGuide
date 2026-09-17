@@ -2,9 +2,9 @@ import ClientLayout from '@/components/printer-setup/ClientLayout';
 import Script from 'next/script'; // Fixed default import
 
 export const metadata = {
-  title: {
-    template: '%s',
-  },
+  title: 'Printer Setup Help – Connect Printer to Wi‑Fi or Computer',
+  description:
+    'Get printer setup help for Wi‑Fi, computer connection and offline issues. Learn how to add a printer to a computer, troubleshoot connection problems and fix common printer offline issues.',
 };
 
 export default function PrinterSetupLayout({ children }) {
