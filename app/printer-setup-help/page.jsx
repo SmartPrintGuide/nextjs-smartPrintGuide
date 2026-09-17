@@ -24,7 +24,7 @@ export const metadata = {
     },
   },
   alternates: {
-    canonical: 'https://www.smartprintguide.com/printer-setup-and-troubleshooting/',
+    canonical: 'https://www.smartprintguide.com/printer-setup-help/',
   },
 };
 

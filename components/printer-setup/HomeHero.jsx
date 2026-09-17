@@ -46,7 +46,7 @@ const HomeHero = () => {
   const handleBrandClick = (brandName) => {
     if (allowStartNow) {
       const slug = (brandName || '').toString().trim().toLowerCase();
-      navigate.push(`/printer-setup-and-troubleshooting/model-search/${slug}`);
+      navigate.push(`/printer-setup-help/model-search/${slug}`);
     } else {
       if (window.jivo_api && typeof window.jivo_api.open === 'function') {
         window.jivo_api.open();

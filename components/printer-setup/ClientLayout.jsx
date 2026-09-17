@@ -21,12 +21,12 @@ export default function ClientLayout({ children }) {
           setShowLogo(data.showLogo === true);
           setAllowStartNow(data.allowStartNow !== false);
 
-          const isRootPath = pathname === '/printer-setup-and-troubleshooting' || pathname === '/printer-setup-and-troubleshooting/';
-          const isSettingsPath = pathname?.startsWith('/printer-setup-and-troubleshooting/settings');
+          const isRootPath = pathname === '/printer-setup-help' || pathname === '/printer-setup-help/';
+          const isSettingsPath = pathname?.startsWith('/printer-setup-help/settings');
 
           // Redirect to root if start now is disabled and user is on a subpage
           if (data.allowStartNow === false && !isRootPath && !isSettingsPath) {
-            router.push('/printer-setup-and-troubleshooting/');
+            router.push('/printer-setup-help/');
           }
           setSettingsLoaded(true);
         })
@@ -41,8 +41,8 @@ export default function ClientLayout({ children }) {
     return () => clearInterval(intervalRef.current);
   }, [pathname, router]);
 
-  const isRootPath = pathname === '/printer-setup-and-troubleshooting' || pathname === '/printer-setup-and-troubleshooting/';
-  const isSettingsPath = pathname?.startsWith('/printer-setup-and-troubleshooting/settings');
+  const isRootPath = pathname === '/printer-setup-help' || pathname === '/printer-setup-help/';
+  const isSettingsPath = pathname?.startsWith('/printer-setup-help/settings');
   const shouldHideHeader = isRootPath || isSettingsPath;
 
   // Prevent flash of subpage content before redirect

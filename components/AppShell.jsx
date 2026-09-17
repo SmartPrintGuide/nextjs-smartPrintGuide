@@ -8,7 +8,7 @@ import ScrollToTop from './ScrollToTop';
 export default function AppShell({ children }) {
   const pathname = usePathname() || '';
   const isAdminRoute = pathname.startsWith('/admin');
-  const isPrinterSetupRoute = pathname.startsWith('/printer-setup-and-troubleshooting');
+  const isPrinterSetupRoute = pathname.startsWith('/printer-setup-help');
   const showMainShell = !isAdminRoute && !isPrinterSetupRoute;
 
   return (
