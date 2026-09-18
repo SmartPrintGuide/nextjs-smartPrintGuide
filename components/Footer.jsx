@@ -17,14 +17,14 @@ const Footer = () => {
           <div className="mb-4 flex items-center gap-2">
             <img
               src="/spglogo.png"
-              alt="smartPrintGuide Logo"
+              alt="Smart Print Guide Logo"
               className="h-16 w-auto sm:h-20 md:h-24 object-contain drop-shadow-md"
               style={{ maxWidth: '180px' }}
             />
             
           </div>
           <p className="text-blue-100 text-sm mb-4">
-            smartPrintGuide is your trusted destination for printers,
+            Smart Print Guide is your trusted destination for printers,
             ink, toner, and expert printing guides. We focus on quality
             recommendations, secure shopping, and reliable support.
           </p>
@@ -38,7 +38,7 @@ const Footer = () => {
         </div> */}
 
         {/* Quick Links */}
-            <div className="bg-white/10 backdrop-blur-lg p-6 rounded-2xl shadow-2xl hover:scale-105 transition duration-500">
+        <div className="bg-white/10 backdrop-blur-lg p-6 rounded-2xl shadow-2xl hover:scale-105 transition duration-500">
           <h3 className="font-semibold text-lg mb-4 border-b border-blue-400 pb-2">
             Account
           </h3>
@@ -52,7 +52,7 @@ const Footer = () => {
 
 
         {/* Quick Links */}
-            <div className="bg-white/10 backdrop-blur-lg p-6 rounded-2xl shadow-2xl hover:scale-105 transition duration-500">
+        <div className="bg-white/10 backdrop-blur-lg p-6 rounded-2xl shadow-2xl hover:scale-105 transition duration-500">
           <h3 className="font-semibold text-lg mb-4 border-b border-blue-400 pb-2">
             Quick Links
           </h3>
@@ -103,12 +103,12 @@ const Footer = () => {
                 support@smartprintguide.com
               </a>
             </li>
-           <li>
-  20503 Kohle Springs Ln <br />
-  Cypress, TX 77433 <br />
-  United States
-</li>
-<li>Support: Monday–Friday, 9am–6pm ET</li>
+            <li>
+              20503 Kohle Springs Ln <br />
+              Cypress, TX 77433 <br />
+              United States
+            </li>
+            <li>Support: Monday–Friday, 9am–6pm ET</li>
 
           </ul>
         </div>
@@ -117,21 +117,16 @@ const Footer = () => {
 
       {/* Bottom with Logo and Company Info */}
       <div className="mt-16 border-t border-blue-500 pt-8 text-center text-blue-200 text-sm relative z-10 flex flex-col items-center gap-2">
-        <img src="/spglogo.png" alt="smartPrintGuide Logo" width="130" height="48" className="h-12 w-auto mb-2 bg-white  border-blue-500 rounded-full" style={{ maxWidth: '130px' }} />
-        <div className="font-bold text-blue-100">smartPrintGuide</div>
-        <div className="text-blue-100 mb-4">All rights reserved.</div>
+
+        <div className="font-bold text-blue-100">Smart Print Guide</div>
+        <div className="text-blue-100 mb-4">
+          &copy; {new Date().getFullYear()} Smart Print Guide. All rights reserved.
+        </div>
         {/* Legal/Disclaimer Content */}
         <div className="w-full max-w-5xl mx-auto px-4 text-xs text-blue-100 text-center leading-relaxed">
-
-          <div className="mb-2">
-            <span className="font-semibold text-blue-200">Disclaimer:</span> smartPrintGuide is an independent retailer based in Safety Harbor, Florida and is not affiliated with, endorsed by, or sponsored by HP Inc., Canon Inc., Epson America Inc., Brother Industries Ltd., Fujitsu Limited, TP-Link Technologies Co., ASUSTeK Computer Inc., DJI Technology Co., or any other manufacturer. All product images, logos, and trademarks are the property of their respective owners. Product images are used for informational purposes only under fair use guidelines.
-          </div>
-          <div className="mb-2">
-            HP, LaserJet, ScanJet, OfficeJet, and related trademarks are registered trademarks of HP Inc. Canon, PIXMA, and imageCLASS are trademarks of Canon Inc. Epson and EcoTank are trademarks of Seiko Epson Corporation. Brother is a trademark of Brother Industries Ltd. TP-Link and Archer are trademarks of TP-Link Technologies Co. ASUS and ROG are trademarks of ASUSTeK Computer Inc. DJI, Mavic, Mini, Air, and Avata are trademarks of DJI Technology Co. All other trademarks are the property of their respective owners.
-          </div>
-          <div className="mb-2">
-            All product information, specifications, pricing, and availability are subject to change without notice. We make every effort to ensure accuracy but cannot guarantee that all information is complete or error-free. Manufacturer warranties apply per brand terms. Please verify product details with the manufacturer before making a purchase decision. For questions, contact us at <a href="mailto:support@smartprintguide.com" className="underline text-blue-200 hover:text-white">support@smartprintguide.com</a>.
-          </div>
+          <p>
+            <span className="font-semibold text-blue-200">Disclaimer:</span> Smart Print Guide is an independent retailer and is not affiliated with or endorsed by any manufacturer or brand. All trademarks, logos, product names, and images belong to their respective owners and are used for identification and informational purposes only. Product details, pricing, and availability are subject to change.
+          </p>
         </div>
       </div>
     </footer>

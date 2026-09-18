@@ -41,7 +41,7 @@ const OurPromiseSection = () => {
         {/* Header */}
         <div className="text-center mb-14">
           <h2 className="text-3xl md:text-4xl font-extrabold text-blue-800">
-            Our Promise at smartPrintGuide
+            Our Promise at Smart Print Guide
           </h2>
           <p className="mt-4 text-gray-600 max-w-2xl mx-auto text-base md:text-lg">
             We’re committed to delivering more than just printing supplies —

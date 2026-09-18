@@ -13,7 +13,7 @@ function AllInOne() {
             <CategoryHero
                 desktopImage="/all_in_one.webp"
                 mobileImage="/all_in_one_mobile.webp"
-                altText="All in one printers - SmartPrintGuide"
+                altText="All in one printers - Smart Print Guide"
             />
             <ProductRouteHeading
                 breadcrumbs={[

@@ -7,12 +7,12 @@ import Script from 'next/script';
 export const metadata = {
   metadataBase: new URL('https://smartprintguide.com'),
   title: {
-    default: 'SmartPrintGuide - Printers, Ink, Toner, and Office Supplies',
-    template: '%s | SmartPrintGuide',
+    default: 'Smart Print Guide - Printers, Ink, Toner, and Office Supplies',
+    template: '%s | Smart Print Guide',
   },
-  description: 'SmartPrintGuide is your source for printers, ink, toner, and office supplies. Shop home and office printers with fast shipping, expert support, and product guides.',
+  description: 'Smart Print Guide is your source for printers, ink, toner, and office supplies. Shop home and office printers with fast shipping, expert support, and product guides.',
   keywords: [
-    'smartprintguide',
+    'Smart Print Guide',
     'printers',
     'ink cartridges',
     'toner cartridges',
@@ -25,9 +25,9 @@ export const metadata = {
     'laser printers',
     'inkjet printers',
   ],
-  authors: [{ name: 'SmartPrintGuide' }],
-  creator: 'SmartPrintGuide',
-  publisher: 'SmartPrintGuide',
+  authors: [{ name: 'Smart Print Guide' }],
+  creator: 'Smart Print Guide',
+  publisher: 'Smart Print Guide',
   robots: {
     index: true,
     follow: true,
@@ -48,24 +48,24 @@ export const metadata = {
   },
   openGraph: {
     type: 'website',
-    title: 'SmartPrintGuide - Printers, Ink, Toner, and Office Supplies',
-    description: 'SmartPrintGuide helps you find the best printers, ink, toner, and office printing guides with fast shipping and expert support.',
+    title: 'Smart Print Guide - Printers, Ink, Toner, and Office Supplies',
+    description: 'Smart Print Guide helps you find the best printers, ink, toner, and office printing guides with fast shipping and expert support.',
     url: 'https://smartprintguide.com/',
-    siteName: 'SmartPrintGuide',
+    siteName: 'Smart Print Guide',
     images: [
       {
         url: 'https://smartprintguide.com/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'SmartPrintGuide | Printers, Ink, Toner, and Office Supplies',
+        alt: 'Smart Print Guide | Printers, Ink, Toner, and Office Supplies',
       },
     ],
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'SmartPrintGuide - Printers, Ink, Toner, and Office Supplies',
-    description: 'Discover printing guides, printer deals, ink, toner, and office printer solutions at SmartPrintGuide.',
+    title: 'Smart Print Guide - Printers, Ink, Toner, and Office Supplies',
+    description: 'Discover printing guides, printer deals, ink, toner, and office printer solutions at Smart Print Guide.',
     images: ['https://smartprintguide.com/twitter-image.jpg'],
   },
   icons: {
@@ -81,8 +81,8 @@ export const metadata = {
     'apple-mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-status-bar-style': 'black-translucent',
     'mobile-web-app-capable': 'yes',
-    'application-name': 'SmartPrintGuide',
-    'apple-mobile-web-app-title': 'SmartPrintGuide',
+    'application-name': 'Smart Print Guide',
+    'apple-mobile-web-app-title': 'Smart Print Guide',
     'format-detection': 'telephone=no',
   },
 };

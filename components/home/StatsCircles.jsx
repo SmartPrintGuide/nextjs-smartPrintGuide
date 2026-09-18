@@ -32,7 +32,7 @@ const StatsCircles = () => {
         {/* Heading */}
         <div className="text-center mb-14">
           <h2 className="text-3xl md:text-4xl font-extrabold text-blue-800">
-            smartPrintGuide in Numbers
+            Smart Print Guide in Numbers
           </h2>
           <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
             Trusted by thousands for reliable printing solutions and seamless online shopping.

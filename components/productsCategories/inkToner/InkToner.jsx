@@ -11,7 +11,7 @@ function InkToner() {
             <CategoryHero
                 desktopImage="/inkTonerBanner.webp"
                 mobileImage="/inkTonerBannerMobile.webp"
-                altText="Quality Ink and Toner Cartridges - SmartPrintGuide"
+                altText="Quality Ink and Toner Cartridges - Smart Print Guide"
             />
             <ProductRouteHeading
                 breadcrumbs={[

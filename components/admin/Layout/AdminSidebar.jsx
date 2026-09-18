@@ -57,7 +57,7 @@ const AdminSidebar = ({ isOpen, setIsOpen }) => {
                     <div className="flex-1 flex items-center justify-start">
                         <img 
                             src="/spglogo.png" 
-                            alt="SmartPrintGuide" 
+                            alt="Smart Print Guide" 
                             width="180"
                             height="66"
                             className="h-12 w-auto object-contain max-w-[180px]"

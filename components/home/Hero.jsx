@@ -53,7 +53,7 @@ const Hero = () => {
 
               <img
                 src={heroImage}
-                alt="Printers smartPrintGuide"
+                alt="Printers Smart Print Guide"
                 className="w-full max-w-md object-contain"
                 fetchPriority="high"
                 width={588}

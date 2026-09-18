@@ -39,7 +39,7 @@ const CategoryScrollSection = React.memo(() => {
             Browse Categories
           </h2>
           <p className="text-gray-600 mt-3 max-w-2xl mx-auto">
-            Explore printer types and supplies curated for your needs at smartPrintGuide.
+            Explore printer types and supplies curated for your needs at Smart Print Guide.
           </p>
         </div>
 

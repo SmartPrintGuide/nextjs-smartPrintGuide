@@ -37,7 +37,7 @@ const choosePoints = [
     icon: <BadgeCheck size={22} />,
     title: "Independent Retailer",
     description:
-      "smartPrintGuide operates independently and is not affiliated with printer manufacturers. All trademarks belong to their respective owners.",
+      "Smart Print Guide operates independently and is not affiliated with printer manufacturers. All trademarks belong to their respective owners.",
   },
 ];
 
@@ -54,7 +54,7 @@ const WhyChooseSection = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-extrabold text-blue-800">
-            <span className="text-blue-600">Why Choose smartPrintGuide?</span>
+            <span className="text-blue-600">Why Choose Smart Print Guide?</span>
           </h2>
           <p className="mt-4 text-gray-600 max-w-2xl mx-auto text-base md:text-lg">
             Experience a smarter way to shop for printers, ink, and toner —
@@ -95,7 +95,7 @@ const WhyChooseSection = () => {
 
             <img
               src={WhyImage}
-              alt="Why Choose smartPrintGuide"
+              alt="Why Choose Smart Print Guide"
               className="relative w-full h-full object-cover rounded-3xl shadow-2xl border border-blue-100"
             />
           </div>

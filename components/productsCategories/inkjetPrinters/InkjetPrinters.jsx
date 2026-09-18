@@ -11,7 +11,7 @@ function InkjetPrinters() {
             <CategoryHero
                 desktopImage="/inkjetBanner.webp"
                 mobileImage="/inkjetBannerMobile.webp"
-                altText="Best Inkjet Printers for Photos and Colors - SmartPrintGuide"
+                altText="Best Inkjet Printers for Photos and Colors - Smart Print Guide"
             />
             <ProductRouteHeading
                 breadcrumbs={[

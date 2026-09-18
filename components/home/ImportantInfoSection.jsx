@@ -23,7 +23,7 @@ const ImportantInfoSection = () => {
           </h2>
 
           <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-            Transparency and clarity are core values at smartPrintGuide.
+            Transparency and clarity are core values at Smart Print Guide.
             Please review the following important details before placing your order.
           </p>
         </div>
@@ -53,7 +53,7 @@ const ImportantInfoSection = () => {
 
             <li className="flex gap-3">
               <span className="text-blue-600 font-bold">•</span>
-              smartPrintGuide operates as an independent online retailer and
+              Smart Print Guide operates as an independent online retailer and
               is not affiliated with or endorsed by any printer manufacturer.
             </li>
 

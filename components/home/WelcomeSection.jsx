@@ -15,7 +15,7 @@ const WelcomeSection = () => {
           {/* Heading */}
           <h2 className="text-3xl md:text-5xl font-extrabold text-blue-800 leading-tight text-left">
             Welcome to{" "}
-            <span className="text-blue-600">smartPrintGuide</span>
+            <span className="text-blue-600">Smart Print Guide</span>
           </h2>
 
           {/* Divider */}
@@ -25,7 +25,7 @@ const WelcomeSection = () => {
           <div className="space-y-6 text-gray-700 text-base md:text-lg leading-relaxed text-left">
 
             <p>
-              smartPrintGuide is your trusted destination for printers,
+              Smart Print Guide is your trusted destination for printers,
               ink, toner, and everyday printing essentials. Our goal is to
               simplify your decisions by providing clear information and
               dependable recommendations.

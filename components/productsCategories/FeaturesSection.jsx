@@ -39,7 +39,7 @@ const FeaturesSection = () => {
         {/* Section Heading */}
         <div className="text-center mb-14">
           <h2 className="text-3xl md:text-4xl font-extrabold text-blue-800">
-            <span className="text-blue-600">Why Choose smartPrintGuide?</span>
+            <span className="text-blue-600">Why Choose Smart Print Guide?</span>
           </h2>
           <p className="text-gray-600 mt-3 max-w-2xl mx-auto">
             Experience reliability, clarity, and support designed around your printing needs.

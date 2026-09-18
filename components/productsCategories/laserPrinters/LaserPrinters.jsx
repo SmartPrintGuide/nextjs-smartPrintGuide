@@ -11,7 +11,7 @@ function LaserPrinters() {
             <CategoryHero
                 desktopImage="/laserBanner.webp"
                 mobileImage="/laserBannerMobile.webp"
-                altText="High-Speed Laser Printers for Office and Business - SmartPrintGuide"
+                altText="High-Speed Laser Printers for Office and Business - Smart Print Guide"
             />
             <ProductRouteHeading
                 breadcrumbs={[

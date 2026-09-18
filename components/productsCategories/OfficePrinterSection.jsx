@@ -19,7 +19,7 @@ function OfficePrinterSection() {
       <CategoryHero
         desktopImage="/officeBanner.webp"
         mobileImage="/officeBannerMobile.webp"
-        altText="Best Office Printers for Business - SmartPrintGuide"
+        altText="Best Office Printers for Business - Smart Print Guide"
       />
       <ProductRouteHeading
         breadcrumbs={[

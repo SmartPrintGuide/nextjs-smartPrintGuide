@@ -19,7 +19,7 @@ function HomePrinterSection() {
       <CategoryHero
         desktopImage="/inkjetBanner.webp"
         mobileImage="/inkjetBannerMobile.webp"
-        altText="Best Home Printers for Photos and Documents - SmartPrintGuide"
+        altText="Best Home Printers for Photos and Documents - Smart Print Guide"
       />
       <ProductRouteHeading
         breadcrumbs={[

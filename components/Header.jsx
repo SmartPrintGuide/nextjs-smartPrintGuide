@@ -108,7 +108,7 @@ const Header = () => {
             <Link href="/" aria-label="Home">
               <img
                 src="/spglogo.png"
-                alt="SmartPrintGuide Logo"
+                alt="Smart Print Guide Logo"
                 width="200"
                 height="74"
                 className="h-16 w-auto sm:h-20 md:h-24 object-contain drop-shadow-md transition-transform duration-300 hover:scale-105"
