@@ -3,18 +3,18 @@ import ProductRouteHeading from '../ProductRouteHeading'
 import CategoryScrollSection from '../CategoryScrollSection'
 import AllInOneProductList from './AllInOneProductList'
 import FeaturesSection from '../FeaturesSection'
-import CategoryHero from '../CategoryHero'
+// import CategoryHero from '../CategoryHero'
 
 function AllInOne() {
     return (
         <>
 
 
-            <CategoryHero
+            {/* <CategoryHero
                 desktopImage="/all_in_one.webp"
                 mobileImage="/all_in_one_mobile.webp"
                 altText="All in one printers - Smart Print Guide"
-            />
+            /> */}
             <ProductRouteHeading
                 breadcrumbs={[
                     { label: "Home", link: "/" },

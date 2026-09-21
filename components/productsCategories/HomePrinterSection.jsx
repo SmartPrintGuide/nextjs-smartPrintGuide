@@ -3,7 +3,7 @@ import ProductRouteHeading from "./ProductRouteHeading";
 import CommonCategoryBar from "./CommonCategoryBar";
 import HomePrinter from "./HomePrinter";
 import FeaturesSection from "./FeaturesSection";
-import CategoryHero from "./CategoryHero";
+// import CategoryHero from "./CategoryHero";
 import Link from "next/link";
 
 function HomePrinterSection() {
@@ -16,11 +16,11 @@ function HomePrinterSection() {
 
   return (
     <>
-      <CategoryHero
+      {/* <CategoryHero
         desktopImage="/inkjetBanner.webp"
         mobileImage="/inkjetBannerMobile.webp"
         altText="Best Home Printers for Photos and Documents - Smart Print Guide"
-      />
+      /> */}
       <ProductRouteHeading
         breadcrumbs={[
           { label: "Home", link: "/" },

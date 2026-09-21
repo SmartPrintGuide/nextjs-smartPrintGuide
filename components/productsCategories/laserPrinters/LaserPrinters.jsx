@@ -3,16 +3,16 @@ import ProductRouteHeading from '../ProductRouteHeading'
 import CategoryScrollSection from '../CategoryScrollSection'
 import LaserPrintersProductList from './LaserPrintersProductList'
 import FeaturesSection from '../FeaturesSection'
-import CategoryHero from '../CategoryHero'
+// import CategoryHero from '../CategoryHero'
 
 function LaserPrinters() {
     return (
         <>
-            <CategoryHero
+            {/* <CategoryHero
                 desktopImage="/laserBanner.webp"
                 mobileImage="/laserBannerMobile.webp"
                 altText="High-Speed Laser Printers for Office and Business - Smart Print Guide"
-            />
+            /> */}
             <ProductRouteHeading
                 breadcrumbs={[
                     { label: "Home", link: "/" },

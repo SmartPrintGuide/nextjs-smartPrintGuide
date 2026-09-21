@@ -3,16 +3,16 @@ import ProductRouteHeading from '../ProductRouteHeading'
 import CategoryScrollSection from '../CategoryScrollSection'
 import InkjetPrintersProductList from './InkjetPrintersProductList'
 import FeaturesSection from '../FeaturesSection'
-import CategoryHero from '../CategoryHero'
+// import CategoryHero from '../CategoryHero'
 
 function InkjetPrinters() {
     return (
         <>
-            <CategoryHero
+            {/* <CategoryHero
                 desktopImage="/inkjetBanner.webp"
                 mobileImage="/inkjetBannerMobile.webp"
                 altText="Best Inkjet Printers for Photos and Colors - Smart Print Guide"
-            />
+            /> */}
             <ProductRouteHeading
                 breadcrumbs={[
                     { label: "Home", link: "/" },

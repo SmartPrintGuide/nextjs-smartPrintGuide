@@ -3,7 +3,7 @@ import ProductRouteHeading from "./ProductRouteHeading";
 import CommonCategoryBar from "./CommonCategoryBar";
 import OfficePrinter from "./OfficePrinter";
 import FeaturesSection from "./FeaturesSection";
-import CategoryHero from "./CategoryHero";
+// import CategoryHero from "./CategoryHero";
 import Link from "next/link";
 
 function OfficePrinterSection() {
@@ -16,11 +16,11 @@ function OfficePrinterSection() {
 
   return (
     <>
-      <CategoryHero
+      {/* <CategoryHero
         desktopImage="/officeBanner.webp"
         mobileImage="/officeBannerMobile.webp"
         altText="Best Office Printers for Business - Smart Print Guide"
-      />
+      /> */}
       <ProductRouteHeading
         breadcrumbs={[
           { label: "Home", link: "/" },
