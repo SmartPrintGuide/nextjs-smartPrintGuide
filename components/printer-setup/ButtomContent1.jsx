@@ -18,7 +18,7 @@ function ButtomContent1() {
           <div className="w-full lg:w-[35%] flex-shrink-0">
             <div className="rounded-2xl overflow-hidden shadow-md border border-slate-200 bg-white aspect-4/3 flex items-center justify-center">
               <img 
-                src="https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?auto=format&fit=crop&q=80&w=800" 
+                src="/offline-printer.jpg" 
                 alt="Printer Setup Help for Connection, Wi-Fi & Offline Issues" 
                 className="w-full h-full object-cover"
               />
@@ -62,7 +62,7 @@ function ButtomContent1() {
           <div className="w-full lg:w-[35%] flex-shrink-0">
             <div className="rounded-2xl overflow-hidden shadow-md border border-slate-200 bg-white aspect-4/3 flex items-center justify-center">
               <img 
-                src="https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?auto=format&fit=crop&q=80&w=800" 
+                src="/printer-setup-help.jpg" 
                 alt="Printer Setup & Connection Help" 
                 className="w-full h-full object-cover"
               />
@@ -130,7 +130,7 @@ function ButtomContent1() {
           <div className="w-full lg:w-[35%] flex-shrink-0">
             <div className="rounded-2xl overflow-hidden shadow-md border border-slate-200 bg-white aspect-4/3 flex items-center justify-center">
               <img 
-                src="https://images.unsplash.com/photo-1563770660941-20978e870e26?auto=format&fit=crop&q=80&w=800" 
+                src="/connect-printer-computer.jpg" 
                 alt="Connect Printer to Computer" 
                 className="w-full h-full object-cover"
               />
@@ -203,7 +203,7 @@ function ButtomContent1() {
           <div className="w-full lg:w-[35%] flex-shrink-0">
             <div className="rounded-2xl overflow-hidden shadow-md border border-slate-200 bg-white aspect-4/3 flex items-center justify-center">
               <img 
-                src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=800" 
+                src="/connect-printer-to-wifi.webp" 
                 alt="Connect Printer to Wi-Fi" 
                 className="w-full h-full object-cover"
               />
@@ -268,7 +268,7 @@ function ButtomContent1() {
           <div className="w-full lg:w-[35%] flex-shrink-0">
             <div className="rounded-2xl overflow-hidden shadow-md border border-slate-200 bg-white aspect-4/3 flex items-center justify-center">
               <img 
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800" 
+                src="/printer-not-connecting.webp" 
                 alt="Printer Not Connecting" 
                 className="w-full h-full object-cover"
               />
@@ -341,7 +341,7 @@ function ButtomContent1() {
           <div className="w-full lg:w-[35%] flex-shrink-0">
             <div className="rounded-2xl overflow-hidden shadow-md border border-slate-200 bg-white aspect-4/3 flex items-center justify-center">
               <img 
-                src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?auto=format&fit=crop&q=80&w=800" 
+                src="/printer-offline.webp" 
                 alt="Printer Offline Fix" 
                 className="w-full h-full object-cover"
               />
@@ -414,7 +414,7 @@ function ButtomContent1() {
           <div className="w-full lg:w-[35%] flex-shrink-0">
             <div className="rounded-2xl overflow-hidden shadow-md border border-slate-200 bg-white aspect-4/3 flex items-center justify-center">
               <img 
-                src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=800" 
+                src="/why-offline-printer.webp" 
                 alt="Why Is My Printer Offline" 
                 className="w-full h-full object-cover"
               />
@@ -482,7 +482,7 @@ function ButtomContent1() {
           <div className="w-full lg:w-[35%] flex-shrink-0">
             <div className="rounded-2xl overflow-hidden shadow-md border border-slate-200 bg-white aspect-4/3 flex items-center justify-center">
               <img 
-                src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=800" 
+                src="/offline-printer.jpg" 
                 alt="Printer Showing Offline" 
                 className="w-full h-full object-cover"
               />
@@ -525,7 +525,7 @@ function ButtomContent1() {
           <div className="w-full lg:w-[35%] flex-shrink-0">
             <div className="rounded-2xl overflow-hidden shadow-md border border-slate-200 bg-white aspect-4/3 flex items-center justify-center">
               <img 
-                src="https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?auto=format&fit=crop&q=80&w=800" 
+                src="/printer-setup-help-hai.webp" 
                 alt="Printer Setup Help" 
                 className="w-full h-full object-cover"
               />
@@ -614,7 +614,7 @@ function ButtomContent1() {
           <div className="w-full lg:w-[35%] flex-shrink-0">
             <div className="rounded-2xl overflow-hidden shadow-md border border-slate-200 bg-white aspect-4/3 flex items-center justify-center">
               <img 
-                src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800" 
+                src="/new-printer-setup-hai.jpg" 
                 alt="New Printer Setup" 
                 className="w-full h-full object-cover"
               />
@@ -747,7 +747,7 @@ function ButtomContent1() {
           <div className="w-full lg:w-[35%] flex-shrink-0">
             <div className="rounded-2xl overflow-hidden shadow-md border border-slate-200 bg-white aspect-4/3 flex items-center justify-center">
               <img 
-                src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=800" 
+                src="/how-printer-setup-help.jpg" 
                 alt="How Printer Help Works" 
                 className="w-full h-full object-cover"
               />
